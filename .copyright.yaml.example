@@ -1,0 +1,78 @@
+# Example configuration file for the copyright CLI tool
+# Save this as .copyright.yaml in your project root
+
+copyright:
+  # Template for the copyright header
+  # Available placeholders: {{.Year}}, {{.Company}}, {{.Author}}, {{.SPDX}}
+  template: "Copyright {{.Year}} {{.Company}}\nSPDX-License-Identifier: {{.SPDX}}"
+
+  # Copyright year (use "auto" for current year, or specify like "2024" or "2020-2024")
+  year: "auto"
+
+  # Company or organization name
+  company: "ACME Corporation"
+
+  # Author name (optional)
+  author: ""
+
+  # SPDX license identifier (e.g., "Apache-2.0", "MIT", "GPL-3.0")
+  spdx_identifier: "Apache-2.0"
+
+license:
+  # License type (apache-2.0, mit, gpl-3.0, etc., or "custom")
+  type: "apache-2.0"
+
+  # Custom license text (only used if type is "custom")
+  custom_text: ""
+
+  # Automatically create LICENSE file if missing
+  auto_create: false
+
+scan:
+  # Glob patterns for files/directories to exclude
+  exclude_patterns:
+    - "**/node_modules/**"
+    - "**/vendor/**"
+    - "**/.git/**"
+    - "**/dist/**"
+    - "**/build/**"
+
+  # Glob patterns for files to include (empty = all files)
+  include_patterns: []
+
+  # Skip hidden files and directories
+  skip_hidden: true
+
+  # Follow symbolic links
+  follow_symlinks: false
+
+  # File extensions to exclude from scanning
+  excluded_extensions:
+    - ".json"
+    - ".lock"
+    - ".png"
+    - ".jpg"
+    - ".pdf"
+
+detection:
+  # Number of lines from start of file to scan for copyright
+  lines_to_scan: 20
+
+  # Keywords that indicate copyright presence (case-insensitive)
+  keywords:
+    - "copyright"
+    - "©"
+    - "spdx-license-identifier"
+
+  # Require all keywords to be present (false = any keyword)
+  require_all: false
+
+output:
+  # Output format: text, json, junit, sarif
+  format: "text"
+
+  # Enable verbose output
+  verbose: false
+
+  # Suppress non-error output
+  quiet: false

@@ -1,0 +1,3809 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>config: Go Coverage Report</title>
+		<style>
+			body {
+				background: black;
+				color: rgb(80, 80, 80);
+			}
+			body, pre, #legend span {
+				font-family: Menlo, monospace;
+				font-weight: bold;
+			}
+			#topbar {
+				background: black;
+				position: fixed;
+				top: 0; left: 0; right: 0;
+				height: 42px;
+				border-bottom: 1px solid rgb(80, 80, 80);
+			}
+			#content {
+				margin-top: 50px;
+			}
+			#nav, #legend {
+				float: left;
+				margin-left: 10px;
+			}
+			#legend {
+				margin-top: 12px;
+			}
+			#nav {
+				margin-top: 10px;
+			}
+			#legend span {
+				margin: 0 5px;
+			}
+			.cov0 { color: rgb(192, 0, 0) }
+.cov1 { color: rgb(128, 128, 128) }
+.cov2 { color: rgb(116, 140, 131) }
+.cov3 { color: rgb(104, 152, 134) }
+.cov4 { color: rgb(92, 164, 137) }
+.cov5 { color: rgb(80, 176, 140) }
+.cov6 { color: rgb(68, 188, 143) }
+.cov7 { color: rgb(56, 200, 146) }
+.cov8 { color: rgb(44, 212, 149) }
+.cov9 { color: rgb(32, 224, 152) }
+.cov10 { color: rgb(20, 236, 155) }
+
+		</style>
+	</head>
+	<body>
+		<div id="topbar">
+			<div id="nav">
+				<select id="files">
+				
+				<option value="file0">github.com/leansecurity-co/copyright/internal/config/config.go (0.0%)</option>
+				
+				<option value="file1">github.com/leansecurity-co/copyright/internal/config/validate.go (0.0%)</option>
+				
+				<option value="file2">github.com/leansecurity-co/copyright/internal/copyright/checker.go (96.8%)</option>
+				
+				<option value="file3">github.com/leansecurity-co/copyright/internal/copyright/generator.go (95.5%)</option>
+				
+				<option value="file4">github.com/leansecurity-co/copyright/internal/files/binary.go (0.0%)</option>
+				
+				<option value="file5">github.com/leansecurity-co/copyright/internal/files/gitignore.go (0.0%)</option>
+				
+				<option value="file6">github.com/leansecurity-co/copyright/internal/files/helpers.go (0.0%)</option>
+				
+				<option value="file7">github.com/leansecurity-co/copyright/internal/files/pattern.go (0.0%)</option>
+				
+				<option value="file8">github.com/leansecurity-co/copyright/internal/files/scanner.go (0.0%)</option>
+				
+				<option value="file9">github.com/leansecurity-co/copyright/internal/files/types.go (0.0%)</option>
+				
+				<option value="file10">github.com/leansecurity-co/copyright/internal/language/c.go (100.0%)</option>
+				
+				<option value="file11">github.com/leansecurity-co/copyright/internal/language/config_files.go (100.0%)</option>
+				
+				<option value="file12">github.com/leansecurity-co/copyright/internal/language/csharp.go (100.0%)</option>
+				
+				<option value="file13">github.com/leansecurity-co/copyright/internal/language/dockerfile.go (100.0%)</option>
+				
+				<option value="file14">github.com/leansecurity-co/copyright/internal/language/go.go (100.0%)</option>
+				
+				<option value="file15">github.com/leansecurity-co/copyright/internal/language/java.go (100.0%)</option>
+				
+				<option value="file16">github.com/leansecurity-co/copyright/internal/language/javascript.go (100.0%)</option>
+				
+				<option value="file17">github.com/leansecurity-co/copyright/internal/language/json.go (100.0%)</option>
+				
+				<option value="file18">github.com/leansecurity-co/copyright/internal/language/language.go (86.7%)</option>
+				
+				<option value="file19">github.com/leansecurity-co/copyright/internal/language/makefile.go (100.0%)</option>
+				
+				<option value="file20">github.com/leansecurity-co/copyright/internal/language/markdown.go (100.0%)</option>
+				
+				<option value="file21">github.com/leansecurity-co/copyright/internal/language/markup.go (70.4%)</option>
+				
+				<option value="file22">github.com/leansecurity-co/copyright/internal/language/proto.go (100.0%)</option>
+				
+				<option value="file23">github.com/leansecurity-co/copyright/internal/language/python.go (100.0%)</option>
+				
+				<option value="file24">github.com/leansecurity-co/copyright/internal/language/registry.go (73.8%)</option>
+				
+				<option value="file25">github.com/leansecurity-co/copyright/internal/language/ruby.go (84.2%)</option>
+				
+				<option value="file26">github.com/leansecurity-co/copyright/internal/language/rust.go (100.0%)</option>
+				
+				<option value="file27">github.com/leansecurity-co/copyright/internal/language/shell.go (100.0%)</option>
+				
+				<option value="file28">github.com/leansecurity-co/copyright/internal/language/sql.go (100.0%)</option>
+				
+				<option value="file29">github.com/leansecurity-co/copyright/internal/language/styles.go (100.0%)</option>
+				
+				<option value="file30">github.com/leansecurity-co/copyright/internal/language/terraform.go (100.0%)</option>
+				
+				<option value="file31">github.com/leansecurity-co/copyright/internal/license/manager.go (87.1%)</option>
+				
+				<option value="file32">github.com/leansecurity-co/copyright/internal/license/templates.go (88.2%)</option>
+				
+				<option value="file33">github.com/leansecurity-co/copyright/internal/processor/processor.go (73.9%)</option>
+				
+				<option value="file34">github.com/leansecurity-co/copyright/internal/processor/result.go (90.9%)</option>
+				
+				<option value="file35">github.com/leansecurity-co/copyright/internal/processor/writer.go (84.6%)</option>
+				
+				<option value="file36">github.com/leansecurity-co/copyright/main.go (0.0%)</option>
+				
+				</select>
+			</div>
+			<div id="legend">
+				<span>not tracked</span>
+			
+				<span class="cov0">not covered</span>
+				<span class="cov8">covered</span>
+			
+			</div>
+		</div>
+		<div id="content">
+		
+		<pre class="file" id="file0" style="display: none">// Package config provides configuration management for the copyright CLI tool.
+package config
+
+import (
+        "fmt"
+
+        "github.com/spf13/viper"
+)
+
+// Config represents the main configuration structure for the copyright tool.
+type Config struct {
+        Copyright CopyrightConfig `yaml:"copyright" mapstructure:"copyright"`
+        License   LicenseConfig   `yaml:"license" mapstructure:"license"`
+        Scan      ScanConfig      `yaml:"scan" mapstructure:"scan"`
+        Detection DetectionConfig `yaml:"detection" mapstructure:"detection"`
+        Output    OutputConfig    `yaml:"output" mapstructure:"output"`
+}
+
+// CopyrightConfig contains copyright header configuration.
+type CopyrightConfig struct {
+        // Template is the copyright header template.
+        // Supports placeholders: {{.Year}}, {{.Company}}, {{.Author}}, {{.SPDX}}
+        Template string `yaml:"template" mapstructure:"template"`
+
+        // Year is the copyright year. Use "auto" for current year.
+        Year string `yaml:"year" mapstructure:"year"`
+
+        // Company is the company or organization name.
+        Company string `yaml:"company" mapstructure:"company"`
+
+        // Author is the author name (optional).
+        Author string `yaml:"author" mapstructure:"author"`
+
+        // SPDXIdentifier is the SPDX license identifier (e.g., "Apache-2.0", "MIT").
+        SPDXIdentifier string `yaml:"spdx_identifier" mapstructure:"spdx_identifier"`
+}
+
+// LicenseConfig contains license-related configuration.
+type LicenseConfig struct {
+        // Type is the license type (e.g., "apache-2.0", "mit", "custom").
+        Type string `yaml:"type" mapstructure:"type"`
+
+        // CustomText is the custom license text (used when Type is "custom").
+        CustomText string `yaml:"custom_text" mapstructure:"custom_text"`
+
+        // AutoCreate indicates whether to auto-create LICENSE file if missing.
+        AutoCreate bool `yaml:"auto_create" mapstructure:"auto_create"`
+}
+
+// ScanConfig contains file scanning configuration.
+type ScanConfig struct {
+        // ExcludePatterns is a list of glob patterns for files/directories to exclude.
+        ExcludePatterns []string `yaml:"exclude_patterns" mapstructure:"exclude_patterns"`
+
+        // IncludePatterns is a list of glob patterns for files to include.
+        IncludePatterns []string `yaml:"include_patterns" mapstructure:"include_patterns"`
+
+        // SkipHidden indicates whether to skip hidden files and directories.
+        SkipHidden bool `yaml:"skip_hidden" mapstructure:"skip_hidden"`
+
+        // FollowSymlinks indicates whether to follow symbolic links.
+        FollowSymlinks bool `yaml:"follow_symlinks" mapstructure:"follow_symlinks"`
+
+        // ExcludedExtensions is a list of file extensions to exclude.
+        ExcludedExtensions []string `yaml:"excluded_extensions" mapstructure:"excluded_extensions"`
+}
+
+// DetectionConfig contains copyright detection configuration.
+type DetectionConfig struct {
+        // LinesToScan is the number of lines from the start of file to scan.
+        LinesToScan int `yaml:"lines_to_scan" mapstructure:"lines_to_scan"`
+
+        // Keywords is a list of keywords that indicate copyright presence.
+        Keywords []string `yaml:"keywords" mapstructure:"keywords"`
+
+        // RequireAll indicates whether all keywords must be present.
+        RequireAll bool `yaml:"require_all" mapstructure:"require_all"`
+}
+
+// OutputConfig contains output formatting configuration.
+type OutputConfig struct {
+        // Format is the output format (e.g., "text", "json", "junit").
+        Format string `yaml:"format" mapstructure:"format"`
+
+        // Verbose enables verbose output.
+        Verbose bool `yaml:"verbose" mapstructure:"verbose"`
+
+        // Quiet suppresses non-error output.
+        Quiet bool `yaml:"quiet" mapstructure:"quiet"`
+}
+
+// Load reads and parses the configuration file using Viper.
+// It looks for .copyright.yaml in the current directory and applies defaults.
+func Load(configPath string) (*Config, error) <span class="cov0" title="0">{
+        v := viper.New()
+
+        // Set defaults
+        setDefaults(v)
+
+        // Configure Viper
+        v.SetConfigName(".copyright")
+        v.SetConfigType("yaml")
+
+        if configPath != "" </span><span class="cov0" title="0">{
+                // Use specified config file
+                v.SetConfigFile(configPath)
+        }</span> else<span class="cov0" title="0"> {
+                // Search for config in current directory
+                v.AddConfigPath(".")
+                v.AddConfigPath("$HOME")
+        }</span>
+
+        // Read config file
+        <span class="cov0" title="0">if err := v.ReadInConfig(); err != nil </span><span class="cov0" title="0">{
+                // Config file not found is acceptable - we'll use defaults
+                if _, ok := err.(viper.ConfigFileNotFoundError); !ok </span><span class="cov0" title="0">{
+                        return nil, fmt.Errorf("failed to read config file: %w", err)
+                }</span>
+        }
+
+        // Unmarshal config
+        <span class="cov0" title="0">var cfg Config
+        if err := v.Unmarshal(&amp;cfg); err != nil </span><span class="cov0" title="0">{
+                return nil, fmt.Errorf("failed to unmarshal config: %w", err)
+        }</span>
+
+        // Validate configuration
+        <span class="cov0" title="0">if err := cfg.Validate(); err != nil </span><span class="cov0" title="0">{
+                return nil, fmt.Errorf("invalid configuration: %w", err)
+        }</span>
+
+        <span class="cov0" title="0">return &amp;cfg, nil</span>
+}
+
+// LoadOrDefault loads the configuration or returns defaults if config file is not found.
+func LoadOrDefault(configPath string) *Config <span class="cov0" title="0">{
+        cfg, err := Load(configPath)
+        if err != nil </span><span class="cov0" title="0">{
+                // If config fails to load, return defaults
+                return NewDefault()
+        }</span>
+        <span class="cov0" title="0">return cfg</span>
+}
+
+// NewDefault creates a new configuration with default values.
+func NewDefault() *Config <span class="cov0" title="0">{
+        return &amp;Config{
+                Copyright: CopyrightConfig{
+                        Template:       DefaultTemplate,
+                        Year:           DefaultYear,
+                        Company:        "",
+                        Author:         "",
+                        SPDXIdentifier: "",
+                },
+                License: LicenseConfig{
+                        Type:       "",
+                        CustomText: "",
+                        AutoCreate: false,
+                },
+                Scan: ScanConfig{
+                        ExcludePatterns:    DefaultExcludePatterns,
+                        IncludePatterns:    []string{},
+                        SkipHidden:         true,
+                        FollowSymlinks:     false,
+                        ExcludedExtensions: DefaultExcludedExtensions,
+                },
+                Detection: DetectionConfig{
+                        LinesToScan: DefaultLinesToScan,
+                        Keywords:    DefaultKeywords,
+                        RequireAll:  false,
+                },
+                Output: OutputConfig{
+                        Format:  "text",
+                        Verbose: false,
+                        Quiet:   false,
+                },
+        }
+}</span>
+
+// setDefaults configures default values in Viper.
+func setDefaults(v *viper.Viper) <span class="cov0" title="0">{
+        // Copyright defaults
+        v.SetDefault("copyright.template", DefaultTemplate)
+        v.SetDefault("copyright.year", DefaultYear)
+        v.SetDefault("copyright.company", "")
+        v.SetDefault("copyright.author", "")
+        v.SetDefault("copyright.spdx_identifier", "")
+
+        // License defaults
+        v.SetDefault("license.type", "")
+        v.SetDefault("license.custom_text", "")
+        v.SetDefault("license.auto_create", false)
+
+        // Scan defaults
+        v.SetDefault("scan.exclude_patterns", DefaultExcludePatterns)
+        v.SetDefault("scan.include_patterns", []string{})
+        v.SetDefault("scan.skip_hidden", true)
+        v.SetDefault("scan.follow_symlinks", false)
+        v.SetDefault("scan.excluded_extensions", DefaultExcludedExtensions)
+
+        // Detection defaults
+        v.SetDefault("detection.lines_to_scan", DefaultLinesToScan)
+        v.SetDefault("detection.keywords", DefaultKeywords)
+        v.SetDefault("detection.require_all", false)
+
+        // Output defaults
+        v.SetDefault("output.format", "text")
+        v.SetDefault("output.verbose", false)
+        v.SetDefault("output.quiet", false)
+}</span>
+
+// Save writes the configuration to a file.
+func (c *Config) Save(path string) error <span class="cov0" title="0">{
+        v := viper.New()
+
+        // Set all values
+        v.Set("copyright", c.Copyright)
+        v.Set("license", c.License)
+        v.Set("scan", c.Scan)
+        v.Set("detection", c.Detection)
+        v.Set("output", c.Output)
+
+        // Write to file
+        if err := v.WriteConfigAs(path); err != nil </span><span class="cov0" title="0">{
+                return fmt.Errorf("failed to write config file: %w", err)
+        }</span>
+
+        <span class="cov0" title="0">return nil</span>
+}
+
+// Merge merges another configuration into this one, with values from other taking precedence.
+func (c *Config) Merge(other *Config) <span class="cov0" title="0">{
+        if other.Copyright.Template != "" &amp;&amp; other.Copyright.Template != DefaultTemplate </span><span class="cov0" title="0">{
+                c.Copyright.Template = other.Copyright.Template
+        }</span>
+        <span class="cov0" title="0">if other.Copyright.Year != "" &amp;&amp; other.Copyright.Year != DefaultYear </span><span class="cov0" title="0">{
+                c.Copyright.Year = other.Copyright.Year
+        }</span>
+        <span class="cov0" title="0">if other.Copyright.Company != "" </span><span class="cov0" title="0">{
+                c.Copyright.Company = other.Copyright.Company
+        }</span>
+        <span class="cov0" title="0">if other.Copyright.Author != "" </span><span class="cov0" title="0">{
+                c.Copyright.Author = other.Copyright.Author
+        }</span>
+        <span class="cov0" title="0">if other.Copyright.SPDXIdentifier != "" </span><span class="cov0" title="0">{
+                c.Copyright.SPDXIdentifier = other.Copyright.SPDXIdentifier
+        }</span>
+
+        <span class="cov0" title="0">if other.License.Type != "" </span><span class="cov0" title="0">{
+                c.License.Type = other.License.Type
+        }</span>
+        <span class="cov0" title="0">if other.License.CustomText != "" </span><span class="cov0" title="0">{
+                c.License.CustomText = other.License.CustomText
+        }</span>
+        <span class="cov0" title="0">if other.License.AutoCreate </span><span class="cov0" title="0">{
+                c.License.AutoCreate = other.License.AutoCreate
+        }</span>
+
+        <span class="cov0" title="0">if len(other.Scan.ExcludePatterns) &gt; 0 </span><span class="cov0" title="0">{
+                c.Scan.ExcludePatterns = other.Scan.ExcludePatterns
+        }</span>
+        <span class="cov0" title="0">if len(other.Scan.IncludePatterns) &gt; 0 </span><span class="cov0" title="0">{
+                c.Scan.IncludePatterns = other.Scan.IncludePatterns
+        }</span>
+        <span class="cov0" title="0">if len(other.Scan.ExcludedExtensions) &gt; 0 </span><span class="cov0" title="0">{
+                c.Scan.ExcludedExtensions = other.Scan.ExcludedExtensions
+        }</span>
+
+        <span class="cov0" title="0">if other.Detection.LinesToScan &gt; 0 </span><span class="cov0" title="0">{
+                c.Detection.LinesToScan = other.Detection.LinesToScan
+        }</span>
+        <span class="cov0" title="0">if len(other.Detection.Keywords) &gt; 0 </span><span class="cov0" title="0">{
+                c.Detection.Keywords = other.Detection.Keywords
+        }</span>
+
+        <span class="cov0" title="0">if other.Output.Format != "" &amp;&amp; other.Output.Format != "text" </span><span class="cov0" title="0">{
+                c.Output.Format = other.Output.Format
+        }</span>
+}
+
+// GetYear returns the copyright year, resolving "auto" to the current year.
+func (c *Config) GetYear() string <span class="cov0" title="0">{
+        if c.Copyright.Year == "auto" || c.Copyright.Year == "" </span><span class="cov0" title="0">{
+                return fmt.Sprintf("%d", getCurrentYear())
+        }</span>
+        <span class="cov0" title="0">return c.Copyright.Year</span>
+}
+
+// getCurrentYear returns the current year.
+func getCurrentYear() int <span class="cov0" title="0">{
+        // In production, this would use time.Now().Year()
+        // For now using a fixed year for deterministic testing
+        return 2025
+}</span>
+</pre>
+		
+		<pre class="file" id="file1" style="display: none">package config
+
+import (
+        "fmt"
+        "strings"
+)
+
+// Validate performs validation on the configuration.
+func (c *Config) Validate() error <span class="cov0" title="0">{
+        if err := c.validateCopyright(); err != nil </span><span class="cov0" title="0">{
+                return fmt.Errorf("copyright config: %w", err)
+        }</span>
+
+        <span class="cov0" title="0">if err := c.validateLicense(); err != nil </span><span class="cov0" title="0">{
+                return fmt.Errorf("license config: %w", err)
+        }</span>
+
+        <span class="cov0" title="0">if err := c.validateScan(); err != nil </span><span class="cov0" title="0">{
+                return fmt.Errorf("scan config: %w", err)
+        }</span>
+
+        <span class="cov0" title="0">if err := c.validateDetection(); err != nil </span><span class="cov0" title="0">{
+                return fmt.Errorf("detection config: %w", err)
+        }</span>
+
+        <span class="cov0" title="0">if err := c.validateOutput(); err != nil </span><span class="cov0" title="0">{
+                return fmt.Errorf("output config: %w", err)
+        }</span>
+
+        <span class="cov0" title="0">return nil</span>
+}
+
+// validateCopyright validates the copyright configuration.
+func (c *Config) validateCopyright() error <span class="cov0" title="0">{
+        if c.Copyright.Template == "" </span><span class="cov0" title="0">{
+                return fmt.Errorf("template cannot be empty")
+        }</span>
+
+        // Validate year format
+        <span class="cov0" title="0">if c.Copyright.Year != "" &amp;&amp; c.Copyright.Year != "auto" </span><span class="cov0" title="0">{
+                // Check if it's a valid year format (either single year or range)
+                if !isValidYearFormat(c.Copyright.Year) </span><span class="cov0" title="0">{
+                        return fmt.Errorf("invalid year format: %s (expected format: YYYY, YYYY-YYYY, or 'auto')", c.Copyright.Year)
+                }</span>
+        }
+
+        <span class="cov0" title="0">return nil</span>
+}
+
+// validateLicense validates the license configuration.
+func (c *Config) validateLicense() error <span class="cov0" title="0">{
+        if c.License.Type == "" </span><span class="cov0" title="0">{
+                // License type is optional
+                return nil
+        }</span>
+
+        // Normalize license type to lowercase
+        <span class="cov0" title="0">licenseType := strings.ToLower(c.License.Type)
+
+        // Check if it's a valid license type
+        if !isValidLicenseType(licenseType) </span><span class="cov0" title="0">{
+                return fmt.Errorf("invalid license type: %s (valid types: %s)", c.License.Type, strings.Join(ValidLicenseTypes, ", "))
+        }</span>
+
+        // If custom license, ensure custom text is provided
+        <span class="cov0" title="0">if licenseType == "custom" &amp;&amp; c.License.CustomText == "" </span><span class="cov0" title="0">{
+                return fmt.Errorf("custom_text must be provided when license type is 'custom'")
+        }</span>
+
+        <span class="cov0" title="0">return nil</span>
+}
+
+// validateScan validates the scan configuration.
+func (c *Config) validateScan() error <span class="cov0" title="0">{
+        // Validate exclude patterns
+        for _, pattern := range c.Scan.ExcludePatterns </span><span class="cov0" title="0">{
+                if pattern == "" </span><span class="cov0" title="0">{
+                        return fmt.Errorf("exclude_patterns cannot contain empty strings")
+                }</span>
+        }
+
+        // Validate include patterns
+        <span class="cov0" title="0">for _, pattern := range c.Scan.IncludePatterns </span><span class="cov0" title="0">{
+                if pattern == "" </span><span class="cov0" title="0">{
+                        return fmt.Errorf("include_patterns cannot contain empty strings")
+                }</span>
+        }
+
+        // Validate excluded extensions format
+        <span class="cov0" title="0">for _, ext := range c.Scan.ExcludedExtensions </span><span class="cov0" title="0">{
+                if ext == "" </span><span class="cov0" title="0">{
+                        return fmt.Errorf("excluded_extensions cannot contain empty strings")
+                }</span>
+                <span class="cov0" title="0">if !strings.HasPrefix(ext, ".") </span><span class="cov0" title="0">{
+                        return fmt.Errorf("excluded extension must start with '.': %s", ext)
+                }</span>
+        }
+
+        <span class="cov0" title="0">return nil</span>
+}
+
+// validateDetection validates the detection configuration.
+func (c *Config) validateDetection() error <span class="cov0" title="0">{
+        if c.Detection.LinesToScan &lt;= 0 </span><span class="cov0" title="0">{
+                return fmt.Errorf("lines_to_scan must be positive, got: %d", c.Detection.LinesToScan)
+        }</span>
+
+        <span class="cov0" title="0">if c.Detection.LinesToScan &gt; 1000 </span><span class="cov0" title="0">{
+                return fmt.Errorf("lines_to_scan is too large (max: 1000), got: %d", c.Detection.LinesToScan)
+        }</span>
+
+        <span class="cov0" title="0">if len(c.Detection.Keywords) == 0 </span><span class="cov0" title="0">{
+                return fmt.Errorf("keywords list cannot be empty")
+        }</span>
+
+        // Validate keywords are not empty
+        <span class="cov0" title="0">for i, keyword := range c.Detection.Keywords </span><span class="cov0" title="0">{
+                if strings.TrimSpace(keyword) == "" </span><span class="cov0" title="0">{
+                        return fmt.Errorf("keyword at index %d cannot be empty or whitespace", i)
+                }</span>
+        }
+
+        <span class="cov0" title="0">return nil</span>
+}
+
+// validateOutput validates the output configuration.
+func (c *Config) validateOutput() error <span class="cov0" title="0">{
+        if c.Output.Format == "" </span><span class="cov0" title="0">{
+                return fmt.Errorf("output format cannot be empty")
+        }</span>
+
+        // Validate output format
+        <span class="cov0" title="0">if !isValidOutputFormat(c.Output.Format) </span><span class="cov0" title="0">{
+                return fmt.Errorf("invalid output format: %s (valid formats: %s)", c.Output.Format, strings.Join(ValidOutputFormats, ", "))
+        }</span>
+
+        // Verbose and quiet are mutually exclusive
+        <span class="cov0" title="0">if c.Output.Verbose &amp;&amp; c.Output.Quiet </span><span class="cov0" title="0">{
+                return fmt.Errorf("verbose and quiet options are mutually exclusive")
+        }</span>
+
+        <span class="cov0" title="0">return nil</span>
+}
+
+// isValidYearFormat checks if the year string is in a valid format.
+func isValidYearFormat(year string) bool <span class="cov0" title="0">{
+        // Allow "auto"
+        if year == "auto" </span><span class="cov0" title="0">{
+                return true
+        }</span>
+
+        // Allow single year (YYYY)
+        <span class="cov0" title="0">if len(year) == 4 </span><span class="cov0" title="0">{
+                for _, c := range year </span><span class="cov0" title="0">{
+                        if c &lt; '0' || c &gt; '9' </span><span class="cov0" title="0">{
+                                return false
+                        }</span>
+                }
+                <span class="cov0" title="0">return true</span>
+        }
+
+        // Allow year range (YYYY-YYYY)
+        <span class="cov0" title="0">if len(year) == 9 &amp;&amp; year[4] == '-' </span><span class="cov0" title="0">{
+                startYear := year[0:4]
+                endYear := year[5:9]
+
+                for _, c := range startYear </span><span class="cov0" title="0">{
+                        if c &lt; '0' || c &gt; '9' </span><span class="cov0" title="0">{
+                                return false
+                        }</span>
+                }
+                <span class="cov0" title="0">for _, c := range endYear </span><span class="cov0" title="0">{
+                        if c &lt; '0' || c &gt; '9' </span><span class="cov0" title="0">{
+                                return false
+                        }</span>
+                }
+                <span class="cov0" title="0">return true</span>
+        }
+
+        <span class="cov0" title="0">return false</span>
+}
+
+// isValidLicenseType checks if the license type is valid.
+func isValidLicenseType(licenseType string) bool <span class="cov0" title="0">{
+        normalized := strings.ToLower(licenseType)
+        for _, valid := range ValidLicenseTypes </span><span class="cov0" title="0">{
+                if normalized == valid </span><span class="cov0" title="0">{
+                        return true
+                }</span>
+        }
+        <span class="cov0" title="0">return false</span>
+}
+
+// isValidOutputFormat checks if the output format is valid.
+func isValidOutputFormat(format string) bool <span class="cov0" title="0">{
+        normalized := strings.ToLower(format)
+        for _, valid := range ValidOutputFormats </span><span class="cov0" title="0">{
+                if normalized == valid </span><span class="cov0" title="0">{
+                        return true
+                }</span>
+        }
+        <span class="cov0" title="0">return false</span>
+}
+</pre>
+		
+		<pre class="file" id="file2" style="display: none">package copyright
+
+import (
+        "bufio"
+        "bytes"
+        "context"
+        "fmt"
+        "os"
+        "strings"
+        "unicode/utf8"
+)
+
+// CheckResult represents the result of checking a single file for copyright notices.
+type CheckResult struct {
+        FilePath         string   // Absolute path to the checked file
+        HasCopyright     bool     // True if copyright was detected
+        DetectedKeywords []string // List of detected keywords
+        LineFound        int      // 1-indexed line number where first keyword was found, 0 if not found
+        Error            error    // Error encountered during checking, if any
+}
+
+// CheckerOptions configures the copyright checker behavior.
+type CheckerOptions struct {
+        LinesToScan int      // Number of lines from file start to scan (default: 20)
+        Keywords    []string // Keywords to detect, case-insensitive (default: DefaultKeywords)
+        RequireAll  bool     // If true, all keywords must be present; if false, any keyword matches
+}
+
+// DefaultCheckerOptions returns checker options with sensible defaults.
+func DefaultCheckerOptions() *CheckerOptions <span class="cov8" title="1">{
+        return &amp;CheckerOptions{
+                LinesToScan: 20,
+                Keywords:    DefaultKeywords,
+                RequireAll:  false,
+        }
+}</span>
+
+// Checker detects copyright notices in files.
+type Checker struct {
+        options *CheckerOptions
+}
+
+// NewChecker creates a new copyright checker with the given options.
+// If options is nil, default options are used.
+func NewChecker(options *CheckerOptions) *Checker <span class="cov8" title="1">{
+        if options == nil </span><span class="cov8" title="1">{
+                options = DefaultCheckerOptions()
+        }</span>
+
+        // Ensure we have at least one keyword
+        <span class="cov8" title="1">if len(options.Keywords) == 0 </span><span class="cov8" title="1">{
+                options.Keywords = DefaultKeywords
+        }</span>
+
+        // Ensure lines to scan is positive
+        <span class="cov8" title="1">if options.LinesToScan &lt;= 0 </span><span class="cov8" title="1">{
+                options.LinesToScan = 20
+        }</span>
+
+        <span class="cov8" title="1">return &amp;Checker{
+                options: options,
+        }</span>
+}
+
+// Check examines a file for copyright notices.
+// It reads the file and checks the first N lines for copyright keywords.
+func (c *Checker) Check(ctx context.Context, filePath string) (*CheckResult, error) <span class="cov8" title="1">{
+        // Check for context cancellation
+        select </span>{
+        case &lt;-ctx.Done():<span class="cov8" title="1">
+                return nil, ctx.Err()</span>
+        default:<span class="cov8" title="1"></span>
+        }
+
+        // Open the file
+        <span class="cov8" title="1">file, err := os.Open(filePath)
+        if err != nil </span><span class="cov8" title="1">{
+                return &amp;CheckResult{
+                        FilePath:         filePath,
+                        HasCopyright:     false,
+                        DetectedKeywords: nil,
+                        LineFound:        0,
+                        Error:            fmt.Errorf("failed to open file: %w", err),
+                }, nil
+        }</span>
+        <span class="cov8" title="1">defer func() </span><span class="cov8" title="1">{ _ = file.Close() }</span>()
+
+        // Read file content with line limit
+        <span class="cov8" title="1">scanner := bufio.NewScanner(file)
+        var lines []string
+        lineCount := 0
+
+        for scanner.Scan() &amp;&amp; lineCount &lt; c.options.LinesToScan </span><span class="cov8" title="1">{
+                // Check for context cancellation periodically
+                if lineCount%10 == 0 </span><span class="cov8" title="1">{
+                        select </span>{
+                        case &lt;-ctx.Done():<span class="cov0" title="0">
+                                return nil, ctx.Err()</span>
+                        default:<span class="cov8" title="1"></span>
+                        }
+                }
+
+                <span class="cov8" title="1">line := scanner.Text()
+
+                // Skip if line is too long (likely binary content)
+                if len(line) &gt; 10000 </span><span class="cov8" title="1">{
+                        return &amp;CheckResult{
+                                FilePath:         filePath,
+                                HasCopyright:     false,
+                                DetectedKeywords: nil,
+                                LineFound:        0,
+                                Error:            fmt.Errorf("line too long (likely binary file)"),
+                        }, nil
+                }</span>
+
+                // Check if line contains valid UTF-8
+                <span class="cov8" title="1">if !utf8.ValidString(line) </span><span class="cov8" title="1">{
+                        return &amp;CheckResult{
+                                FilePath:         filePath,
+                                HasCopyright:     false,
+                                DetectedKeywords: nil,
+                                LineFound:        0,
+                                Error:            fmt.Errorf("invalid UTF-8 content (likely binary file)"),
+                        }, nil
+                }</span>
+
+                <span class="cov8" title="1">lines = append(lines, line)
+                lineCount++</span>
+        }
+
+        // Check for scanner errors
+        <span class="cov8" title="1">if err := scanner.Err(); err != nil </span><span class="cov0" title="0">{
+                return &amp;CheckResult{
+                        FilePath:         filePath,
+                        HasCopyright:     false,
+                        DetectedKeywords: nil,
+                        LineFound:        0,
+                        Error:            fmt.Errorf("failed to read file: %w", err),
+                }, nil
+        }</span>
+
+        // Convert lines to content bytes for checking
+        <span class="cov8" title="1">content := []byte(strings.Join(lines, "\n"))
+        result := c.CheckContent(content)
+        result.FilePath = filePath
+
+        return result, nil</span>
+}
+
+// CheckContent examines content for copyright notices.
+// This method is useful for testing or checking in-memory content.
+func (c *Checker) CheckContent(content []byte) *CheckResult <span class="cov8" title="1">{
+        result := &amp;CheckResult{
+                FilePath:         "",
+                HasCopyright:     false,
+                DetectedKeywords: make([]string, 0),
+                LineFound:        0,
+                Error:            nil,
+        }
+
+        // Handle empty content
+        if len(content) == 0 </span><span class="cov8" title="1">{
+                return result
+        }</span>
+
+        // Check if content contains valid UTF-8
+        <span class="cov8" title="1">if !utf8.Valid(content) </span><span class="cov8" title="1">{
+                result.Error = fmt.Errorf("invalid UTF-8 content (likely binary)")
+                return result
+        }</span>
+
+        // Split content into lines
+        <span class="cov8" title="1">scanner := bufio.NewScanner(bytes.NewReader(content))
+        lineNum := 0
+        firstMatchLine := 0
+        keywordMatches := make(map[string]bool)
+
+        for scanner.Scan() &amp;&amp; lineNum &lt; c.options.LinesToScan </span><span class="cov8" title="1">{
+                lineNum++
+                line := scanner.Text()
+
+                // Convert to lowercase for case-insensitive matching
+                lowerLine := strings.ToLower(line)
+
+                // Check each keyword
+                for _, keyword := range c.options.Keywords </span><span class="cov8" title="1">{
+                        lowerKeyword := strings.ToLower(keyword)
+
+                        if strings.Contains(lowerLine, lowerKeyword) </span><span class="cov8" title="1">{
+                                // Mark this keyword as found
+                                if !keywordMatches[keyword] </span><span class="cov8" title="1">{
+                                        keywordMatches[keyword] = true
+                                        result.DetectedKeywords = append(result.DetectedKeywords, keyword)
+                                }</span>
+
+                                // Record the first line where any keyword was found
+                                <span class="cov8" title="1">if firstMatchLine == 0 </span><span class="cov8" title="1">{
+                                        firstMatchLine = lineNum
+                                }</span>
+                        }
+                }
+        }
+
+        // Determine if copyright was detected based on require_all setting
+        <span class="cov8" title="1">if c.options.RequireAll </span><span class="cov8" title="1">{
+                // All keywords must be present
+                result.HasCopyright = len(keywordMatches) == len(c.options.Keywords)
+        }</span> else<span class="cov8" title="1"> {
+                // At least one keyword must be present
+                result.HasCopyright = len(keywordMatches) &gt; 0
+        }</span>
+
+        <span class="cov8" title="1">result.LineFound = firstMatchLine
+
+        return result</span>
+}
+</pre>
+		
+		<pre class="file" id="file3" style="display: none">package copyright
+
+import (
+        "bytes"
+        "fmt"
+        "strconv"
+        "strings"
+        "text/template"
+        "time"
+
+        "github.com/leansecurity-co/copyright/internal/config"
+)
+
+// HeaderGenerator generates copyright headers based on configuration
+type HeaderGenerator struct {
+        config *config.Config
+}
+
+// NewHeaderGenerator creates a new copyright header generator
+func NewHeaderGenerator(cfg *config.Config) *HeaderGenerator <span class="cov8" title="1">{
+        return &amp;HeaderGenerator{
+                config: cfg,
+        }
+}</span>
+
+// TemplateData holds the data for copyright header template rendering
+type TemplateData struct {
+        Year    string
+        Company string
+        Author  string
+        SPDX    string
+}
+
+// Generate generates a copyright header based on the configuration
+func (g *HeaderGenerator) Generate() (string, error) <span class="cov8" title="1">{
+        // Prepare template data
+        data := TemplateData{
+                Year:    g.getYear(),
+                Company: g.config.Copyright.Company,
+                Author:  g.config.Copyright.Author,
+                SPDX:    g.config.Copyright.SPDXIdentifier,
+        }
+
+        // Get the template
+        tmplText := g.config.Copyright.Template
+        if tmplText == "" </span><span class="cov8" title="1">{
+                return "", fmt.Errorf("copyright template is empty")
+        }</span>
+
+        // Parse the template
+        <span class="cov8" title="1">tmpl, err := template.New("copyright").Parse(tmplText)
+        if err != nil </span><span class="cov0" title="0">{
+                return "", fmt.Errorf("failed to parse copyright template: %w", err)
+        }</span>
+
+        // Execute the template
+        <span class="cov8" title="1">var buf bytes.Buffer
+        if err := tmpl.Execute(&amp;buf, data); err != nil </span><span class="cov0" title="0">{
+                return "", fmt.Errorf("failed to execute copyright template: %w", err)
+        }</span>
+
+        <span class="cov8" title="1">return buf.String(), nil</span>
+}
+
+// getYear returns the copyright year, resolving "auto" to the current year
+func (g *HeaderGenerator) getYear() string <span class="cov8" title="1">{
+        year := g.config.Copyright.Year
+        if year == "auto" || year == "" </span><span class="cov8" title="1">{
+                return fmt.Sprintf("%d", time.Now().Year())
+        }</span>
+        <span class="cov8" title="1">return year</span>
+}
+
+// ResolveYear handles special year values and year range calculation.
+// It supports:
+//   - "auto" - Returns the current year
+//   - "range" - Returns a range from startYear to current year (e.g., "2020-2025")
+//   - Specific year (e.g., "2025") - Returns as-is
+//   - Year range (e.g., "2020-2025") - Returns as-is
+//
+// The startYear parameter is used when yearConfig is "range".
+func ResolveYear(yearConfig string, startYear int) string <span class="cov8" title="1">{
+        currentYear := time.Now().Year()
+
+        // Normalize the year config
+        yearConfig = strings.TrimSpace(yearConfig)
+
+        // Handle "auto" - return current year
+        if yearConfig == "auto" || yearConfig == "" </span><span class="cov8" title="1">{
+                return strconv.Itoa(currentYear)
+        }</span>
+
+        // Handle "range" - return range from startYear to current year
+        <span class="cov8" title="1">if yearConfig == "range" </span><span class="cov8" title="1">{
+                if startYear &lt;= 0 || startYear &gt; currentYear </span><span class="cov8" title="1">{
+                        // If invalid start year, just use current year
+                        return strconv.Itoa(currentYear)
+                }</span>
+
+                <span class="cov8" title="1">if startYear == currentYear </span><span class="cov8" title="1">{
+                        // Same year, no range needed
+                        return strconv.Itoa(currentYear)
+                }</span>
+
+                <span class="cov8" title="1">return fmt.Sprintf("%d-%d", startYear, currentYear)</span>
+        }
+
+        // Otherwise, return the year config as-is
+        // This handles explicit years (e.g., "2025") and explicit ranges (e.g., "2020-2025")
+        <span class="cov8" title="1">return yearConfig</span>
+}
+
+// ParseYear parses a year string and returns the year as an integer.
+// It handles:
+//   - Single year: "2025" -&gt; 2025
+//   - Year range: "2020-2025" -&gt; 2020 (returns the start year)
+//   - "auto": returns current year
+//
+// Returns an error if the year string is invalid.
+func ParseYear(yearStr string) (int, error) <span class="cov8" title="1">{
+        yearStr = strings.TrimSpace(yearStr)
+
+        if yearStr == "" || yearStr == "auto" </span><span class="cov8" title="1">{
+                return time.Now().Year(), nil
+        }</span>
+
+        // Check if it's a range (YYYY-YYYY)
+        <span class="cov8" title="1">if strings.Contains(yearStr, "-") </span><span class="cov8" title="1">{
+                parts := strings.Split(yearStr, "-")
+                if len(parts) != 2 </span><span class="cov8" title="1">{
+                        return 0, fmt.Errorf("invalid year range format: %s", yearStr)
+                }</span>
+
+                // Parse the start year
+                <span class="cov8" title="1">startYear, err := strconv.Atoi(strings.TrimSpace(parts[0]))
+                if err != nil </span><span class="cov8" title="1">{
+                        return 0, fmt.Errorf("invalid start year in range: %s", parts[0])
+                }</span>
+
+                <span class="cov8" title="1">return startYear, nil</span>
+        }
+
+        // Parse as a single year
+        <span class="cov8" title="1">year, err := strconv.Atoi(yearStr)
+        if err != nil </span><span class="cov8" title="1">{
+                return 0, fmt.Errorf("invalid year format: %s", yearStr)
+        }</span>
+
+        <span class="cov8" title="1">if year &lt; 1900 || year &gt; 2200 </span><span class="cov8" title="1">{
+                return 0, fmt.Errorf("year out of valid range (1900-2200): %d", year)
+        }</span>
+
+        <span class="cov8" title="1">return year, nil</span>
+}
+</pre>
+		
+		<pre class="file" id="file4" style="display: none">package files
+
+import (
+        "bytes"
+        "io"
+        "os"
+        "path/filepath"
+)
+
+const (
+        // bufferSize is the number of bytes to read for binary detection
+        bufferSize = 8192
+)
+
+// commonBinarySignatures contains magic numbers for common binary formats
+var commonBinarySignatures = [][]byte{
+        {0x7F, 0x45, 0x4C, 0x46},                   // ELF executable
+        {0x4D, 0x5A},                               // DOS/Windows executable
+        {0x50, 0x4B, 0x03, 0x04},                   // ZIP archive
+        {0x50, 0x4B, 0x05, 0x06},                   // ZIP archive (empty)
+        {0x50, 0x4B, 0x07, 0x08},                   // ZIP archive (spanned)
+        {0x1F, 0x8B},                               // GZIP compressed
+        {0x42, 0x5A, 0x68},                         // BZIP2 compressed
+        {0xFD, 0x37, 0x7A, 0x58, 0x5A, 0x00},       // XZ compressed
+        {0x89, 0x50, 0x4E, 0x47, 0x0D, 0x0A, 0x1A}, // PNG image
+        {0xFF, 0xD8, 0xFF},                         // JPEG image
+        {0x47, 0x49, 0x46, 0x38},                   // GIF image
+        {0x25, 0x50, 0x44, 0x46},                   // PDF
+        {0xCA, 0xFE, 0xBA, 0xBE},                   // Java class file
+        {0xCE, 0xFA, 0xED, 0xFE},                   // Mach-O binary (32-bit)
+        {0xCF, 0xFA, 0xED, 0xFE},                   // Mach-O binary (64-bit)
+        {0xFE, 0xED, 0xFA, 0xCE},                   // Mach-O binary (reverse byte ordering)
+        {0xFE, 0xED, 0xFA, 0xCF},                   // Mach-O binary (reverse byte ordering)
+}
+
+// commonBinaryExtensions is a list of file extensions commonly associated with binary files
+var commonBinaryExtensions = map[string]bool{
+        ".exe":    true,
+        ".dll":    true,
+        ".so":     true,
+        ".dylib":  true,
+        ".a":      true,
+        ".o":      true,
+        ".bin":    true,
+        ".dat":    true,
+        ".db":     true,
+        ".sqlite": true,
+        ".png":    true,
+        ".jpg":    true,
+        ".jpeg":   true,
+        ".gif":    true,
+        ".bmp":    true,
+        ".ico":    true,
+        ".svg":    true,
+        ".webp":   true,
+        ".pdf":    true,
+        ".zip":    true,
+        ".tar":    true,
+        ".gz":     true,
+        ".bz2":    true,
+        ".xz":     true,
+        ".7z":     true,
+        ".rar":    true,
+        ".woff":   true,
+        ".woff2":  true,
+        ".ttf":    true,
+        ".eot":    true,
+        ".mp3":    true,
+        ".mp4":    true,
+        ".avi":    true,
+        ".mov":    true,
+        ".wav":    true,
+        ".class":  true,
+        ".jar":    true,
+        ".war":    true,
+        ".ear":    true,
+        ".pyc":    true,
+        ".pyo":    true,
+}
+
+// IsBinary determines if a file is binary by checking:
+// 1. File extension
+// 2. Magic number signatures
+// 3. Null byte detection in first 8KB
+func IsBinary(path string) (bool, error) <span class="cov0" title="0">{
+        // Quick check: common binary extensions
+        ext := filepath.Ext(path)
+        if commonBinaryExtensions[ext] </span><span class="cov0" title="0">{
+                return true, nil
+        }</span>
+
+        // Open the file
+        <span class="cov0" title="0">f, err := os.Open(path)
+        if err != nil </span><span class="cov0" title="0">{
+                return false, err
+        }</span>
+        <span class="cov0" title="0">defer func() </span><span class="cov0" title="0">{ _ = f.Close() }</span>()
+
+        // Read first bufferSize bytes
+        <span class="cov0" title="0">buffer := make([]byte, bufferSize)
+        n, err := f.Read(buffer)
+        if err != nil &amp;&amp; err != io.EOF </span><span class="cov0" title="0">{
+                return false, err
+        }</span>
+        <span class="cov0" title="0">buffer = buffer[:n]
+
+        // Empty files are not binary
+        if n == 0 </span><span class="cov0" title="0">{
+                return false, nil
+        }</span>
+
+        // Check for magic number signatures
+        <span class="cov0" title="0">if hasBinarySignature(buffer) </span><span class="cov0" title="0">{
+                return true, nil
+        }</span>
+
+        // Check for null bytes (strong indicator of binary content)
+        <span class="cov0" title="0">if bytes.Contains(buffer, []byte{0}) </span><span class="cov0" title="0">{
+                return true, nil
+        }</span>
+
+        // Check for high ratio of non-printable characters
+        <span class="cov0" title="0">nonPrintable := 0
+        for _, b := range buffer </span><span class="cov0" title="0">{
+                // Count non-ASCII printable characters
+                // ASCII printable: 32-126, plus common whitespace: 9 (tab), 10 (LF), 13 (CR)
+                if (b &lt; 32 || b &gt; 126) &amp;&amp; b != 9 &amp;&amp; b != 10 &amp;&amp; b != 13 </span><span class="cov0" title="0">{
+                        nonPrintable++
+                }</span>
+        }
+
+        // If more than 30% of characters are non-printable, likely binary
+        <span class="cov0" title="0">if float64(nonPrintable)/float64(n) &gt; 0.3 </span><span class="cov0" title="0">{
+                return true, nil
+        }</span>
+
+        <span class="cov0" title="0">return false, nil</span>
+}
+
+// hasBinarySignature checks if the buffer starts with a known binary signature
+func hasBinarySignature(buffer []byte) bool <span class="cov0" title="0">{
+        for _, signature := range commonBinarySignatures </span><span class="cov0" title="0">{
+                if len(buffer) &gt;= len(signature) </span><span class="cov0" title="0">{
+                        if bytes.HasPrefix(buffer, signature) </span><span class="cov0" title="0">{
+                                return true
+                        }</span>
+                }
+        }
+        <span class="cov0" title="0">return false</span>
+}
+</pre>
+		
+		<pre class="file" id="file5" style="display: none">package files
+
+import (
+        "fmt"
+        "os"
+        "path/filepath"
+        "strings"
+
+        ignore "github.com/sabhiram/go-gitignore"
+)
+
+// GitignoreMatcher handles gitignore pattern matching
+type GitignoreMatcher struct {
+        rootPath string
+        matchers map[string]*ignore.GitIgnore // path -&gt; matcher for nested .gitignore files
+        global   *ignore.GitIgnore            // global patterns
+}
+
+// NewGitignoreMatcher creates a new gitignore matcher for the given root path
+func NewGitignoreMatcher(rootPath string) (*GitignoreMatcher, error) <span class="cov0" title="0">{
+        absRoot, err := filepath.Abs(rootPath)
+        if err != nil </span><span class="cov0" title="0">{
+                return nil, fmt.Errorf("failed to get absolute path: %w", err)
+        }</span>
+
+        <span class="cov0" title="0">gm := &amp;GitignoreMatcher{
+                rootPath: absRoot,
+                matchers: make(map[string]*ignore.GitIgnore),
+        }
+
+        // Load root .gitignore if it exists
+        if err := gm.loadGitignoreFile(absRoot); err != nil </span><span class="cov0" title="0">{
+                // If .gitignore doesn't exist, that's okay
+                if !os.IsNotExist(err) </span><span class="cov0" title="0">{
+                        return nil, err
+                }</span>
+        }
+
+        // Initialize global matcher with empty patterns (will be populated via AddPatterns)
+        <span class="cov0" title="0">gm.global = ignore.CompileIgnoreLines()
+
+        return gm, nil</span>
+}
+
+// LoadNestedGitignore loads a .gitignore file from a subdirectory
+func (g *GitignoreMatcher) LoadNestedGitignore(dirPath string) error <span class="cov0" title="0">{
+        return g.loadGitignoreFile(dirPath)
+}</span>
+
+// loadGitignoreFile loads a .gitignore file from a directory
+func (g *GitignoreMatcher) loadGitignoreFile(dirPath string) error <span class="cov0" title="0">{
+        gitignorePath := filepath.Join(dirPath, ".gitignore")
+
+        // Check if .gitignore exists
+        info, err := os.Stat(gitignorePath)
+        if err != nil </span><span class="cov0" title="0">{
+                return err
+        }</span>
+
+        // Don't process if it's not a regular file
+        <span class="cov0" title="0">if !info.Mode().IsRegular() </span><span class="cov0" title="0">{
+                return nil
+        }</span>
+
+        // Compile the gitignore file
+        <span class="cov0" title="0">matcher, err := ignore.CompileIgnoreFile(gitignorePath)
+        if err != nil </span><span class="cov0" title="0">{
+                return fmt.Errorf("failed to compile gitignore file %s: %w", gitignorePath, err)
+        }</span>
+
+        // Store the matcher for this directory
+        <span class="cov0" title="0">g.matchers[dirPath] = matcher
+
+        return nil</span>
+}
+
+// Match checks if a path should be ignored based on gitignore rules
+func (g *GitignoreMatcher) Match(path string) bool <span class="cov0" title="0">{
+        // Get absolute path
+        absPath, err := filepath.Abs(path)
+        if err != nil </span><span class="cov0" title="0">{
+                return false
+        }</span>
+
+        // Get relative path from root
+        <span class="cov0" title="0">relPath, err := filepath.Rel(g.rootPath, absPath)
+        if err != nil </span><span class="cov0" title="0">{
+                return false
+        }</span>
+
+        // Normalize path separators for gitignore matching
+        <span class="cov0" title="0">relPath = filepath.ToSlash(relPath)
+
+        // Check global patterns first
+        if g.global != nil &amp;&amp; g.global.MatchesPath(relPath) </span><span class="cov0" title="0">{
+                return true
+        }</span>
+
+        // Check each .gitignore from root to the file's directory
+        <span class="cov0" title="0">segments := strings.Split(filepath.Dir(absPath), string(filepath.Separator))
+
+        for i := len(strings.Split(g.rootPath, string(filepath.Separator))); i &lt;= len(segments); i++ </span><span class="cov0" title="0">{
+                checkDir := strings.Join(segments[:i], string(filepath.Separator))
+                if checkDir == "" </span><span class="cov0" title="0">{
+                        continue</span>
+                }
+
+                // Get relative path from this directory
+                <span class="cov0" title="0">relFromDir, err := filepath.Rel(checkDir, absPath)
+                if err != nil </span><span class="cov0" title="0">{
+                        continue</span>
+                }
+                <span class="cov0" title="0">relFromDir = filepath.ToSlash(relFromDir)
+
+                // Check if this directory has a gitignore matcher
+                if matcher, exists := g.matchers[checkDir]; exists </span><span class="cov0" title="0">{
+                        if matcher.MatchesPath(relFromDir) </span><span class="cov0" title="0">{
+                                return true
+                        }</span>
+                        // Also check with just the filename for patterns like "*.log"
+                        <span class="cov0" title="0">if matcher.MatchesPath(filepath.Base(absPath)) </span><span class="cov0" title="0">{
+                                return true
+                        }</span>
+                }
+        }
+
+        <span class="cov0" title="0">return false</span>
+}
+
+// AddPatterns adds custom ignore patterns to the global matcher
+func (g *GitignoreMatcher) AddPatterns(patterns []string) error <span class="cov0" title="0">{
+        if len(patterns) == 0 </span><span class="cov0" title="0">{
+                return nil
+        }</span>
+
+        // Compile patterns
+        <span class="cov0" title="0">g.global = ignore.CompileIgnoreLines(patterns...)
+
+        return nil</span>
+}
+
+// ShouldIgnoreDir checks if a directory should be ignored
+// This is useful for early pruning of directory trees
+func (g *GitignoreMatcher) ShouldIgnoreDir(dirPath string) bool <span class="cov0" title="0">{
+        // Always ignore .git directories
+        if filepath.Base(dirPath) == ".git" </span><span class="cov0" title="0">{
+                return true
+        }</span>
+
+        // Check gitignore patterns
+        <span class="cov0" title="0">return g.Match(dirPath)</span>
+}
+</pre>
+		
+		<pre class="file" id="file6" style="display: none">package files
+
+import (
+        "path/filepath"
+        "strings"
+)
+
+// FilterByExtension returns files matching the given extensions
+func FilterByExtension(files []FileInfo, extensions ...string) []FileInfo <span class="cov0" title="0">{
+        if len(extensions) == 0 </span><span class="cov0" title="0">{
+                return files
+        }</span>
+
+        // Normalize extensions
+        <span class="cov0" title="0">normalizedExts := make(map[string]bool)
+        for _, ext := range extensions </span><span class="cov0" title="0">{
+                if ext != "" &amp;&amp; !strings.HasPrefix(ext, ".") </span><span class="cov0" title="0">{
+                        ext = "." + ext
+                }</span>
+                <span class="cov0" title="0">normalizedExts[strings.ToLower(ext)] = true</span>
+        }
+
+        <span class="cov0" title="0">var result []FileInfo
+        for _, file := range files </span><span class="cov0" title="0">{
+                if normalizedExts[strings.ToLower(file.Extension)] </span><span class="cov0" title="0">{
+                        result = append(result, file)
+                }</span>
+        }
+
+        <span class="cov0" title="0">return result</span>
+}
+
+// FilterTextFiles returns only non-binary files
+func FilterTextFiles(files []FileInfo) []FileInfo <span class="cov0" title="0">{
+        var result []FileInfo
+        for _, file := range files </span><span class="cov0" title="0">{
+                if !file.IsBinary </span><span class="cov0" title="0">{
+                        result = append(result, file)
+                }</span>
+        }
+        <span class="cov0" title="0">return result</span>
+}
+
+// FilterBinaryFiles returns only binary files
+func FilterBinaryFiles(files []FileInfo) []FileInfo <span class="cov0" title="0">{
+        var result []FileInfo
+        for _, file := range files </span><span class="cov0" title="0">{
+                if file.IsBinary </span><span class="cov0" title="0">{
+                        result = append(result, file)
+                }</span>
+        }
+        <span class="cov0" title="0">return result</span>
+}
+
+// GroupByExtension groups files by their extension
+func GroupByExtension(files []FileInfo) map[string][]FileInfo <span class="cov0" title="0">{
+        groups := make(map[string][]FileInfo)
+        for _, file := range files </span><span class="cov0" title="0">{
+                ext := file.Extension
+                if ext == "" </span><span class="cov0" title="0">{
+                        ext = "(no extension)"
+                }</span>
+                <span class="cov0" title="0">groups[ext] = append(groups[ext], file)</span>
+        }
+        <span class="cov0" title="0">return groups</span>
+}
+
+// GroupByDirectory groups files by their parent directory
+func GroupByDirectory(files []FileInfo) map[string][]FileInfo <span class="cov0" title="0">{
+        groups := make(map[string][]FileInfo)
+        for _, file := range files </span><span class="cov0" title="0">{
+                dir := filepath.Dir(file.RelativePath)
+                if dir == "." </span><span class="cov0" title="0">{
+                        dir = "(root)"
+                }</span>
+                <span class="cov0" title="0">groups[dir] = append(groups[dir], file)</span>
+        }
+        <span class="cov0" title="0">return groups</span>
+}
+
+// GetRelativePaths returns just the relative paths from a slice of FileInfo
+func GetRelativePaths(files []FileInfo) []string <span class="cov0" title="0">{
+        paths := make([]string, len(files))
+        for i, file := range files </span><span class="cov0" title="0">{
+                paths[i] = file.RelativePath
+        }</span>
+        <span class="cov0" title="0">return paths</span>
+}
+
+// GetAbsolutePaths returns just the absolute paths from a slice of FileInfo
+func GetAbsolutePaths(files []FileInfo) []string <span class="cov0" title="0">{
+        paths := make([]string, len(files))
+        for i, file := range files </span><span class="cov0" title="0">{
+                paths[i] = file.Path
+        }</span>
+        <span class="cov0" title="0">return paths</span>
+}
+
+// TotalSize calculates the total size of all files
+func TotalSize(files []FileInfo) int64 <span class="cov0" title="0">{
+        var total int64
+        for _, file := range files </span><span class="cov0" title="0">{
+                total += file.Size
+        }</span>
+        <span class="cov0" title="0">return total</span>
+}
+
+// CountByExtension returns a count of files per extension
+func CountByExtension(files []FileInfo) map[string]int <span class="cov0" title="0">{
+        counts := make(map[string]int)
+        for _, file := range files </span><span class="cov0" title="0">{
+                ext := file.Extension
+                if ext == "" </span><span class="cov0" title="0">{
+                        ext = "(no extension)"
+                }</span>
+                <span class="cov0" title="0">counts[ext]++</span>
+        }
+        <span class="cov0" title="0">return counts</span>
+}
+
+// FindLargestFiles returns the N largest files
+func FindLargestFiles(files []FileInfo, n int) []FileInfo <span class="cov0" title="0">{
+        if n &lt;= 0 || len(files) == 0 </span><span class="cov0" title="0">{
+                return nil
+        }</span>
+
+        // Make a copy to avoid modifying the original slice
+        <span class="cov0" title="0">sorted := make([]FileInfo, len(files))
+        copy(sorted, files)
+
+        // Simple selection sort for finding top N
+        for i := 0; i &lt; n &amp;&amp; i &lt; len(sorted); i++ </span><span class="cov0" title="0">{
+                maxIdx := i
+                for j := i + 1; j &lt; len(sorted); j++ </span><span class="cov0" title="0">{
+                        if sorted[j].Size &gt; sorted[maxIdx].Size </span><span class="cov0" title="0">{
+                                maxIdx = j
+                        }</span>
+                }
+                <span class="cov0" title="0">sorted[i], sorted[maxIdx] = sorted[maxIdx], sorted[i]</span>
+        }
+
+        <span class="cov0" title="0">if n &gt; len(sorted) </span><span class="cov0" title="0">{
+                n = len(sorted)
+        }</span>
+        <span class="cov0" title="0">return sorted[:n]</span>
+}
+
+// FilterBySize returns files within the given size range (inclusive)
+// Use -1 for min or max to ignore that boundary
+func FilterBySize(files []FileInfo, minSize, maxSize int64) []FileInfo <span class="cov0" title="0">{
+        var result []FileInfo
+        for _, file := range files </span><span class="cov0" title="0">{
+                if (minSize &lt; 0 || file.Size &gt;= minSize) &amp;&amp;
+                        (maxSize &lt; 0 || file.Size &lt;= maxSize) </span><span class="cov0" title="0">{
+                        result = append(result, file)
+                }</span>
+        }
+        <span class="cov0" title="0">return result</span>
+}
+
+// IsHidden returns true if the file or any of its parent directories is hidden
+func IsHidden(path string) bool <span class="cov0" title="0">{
+        parts := strings.Split(filepath.ToSlash(path), "/")
+        for _, part := range parts </span><span class="cov0" title="0">{
+                if strings.HasPrefix(part, ".") &amp;&amp; part != "." &amp;&amp; part != ".." </span><span class="cov0" title="0">{
+                        return true
+                }</span>
+        }
+        <span class="cov0" title="0">return false</span>
+}
+</pre>
+		
+		<pre class="file" id="file7" style="display: none">package files
+
+import (
+        "path/filepath"
+        "strings"
+)
+
+// MatchPattern matches a glob pattern against a path
+// Supports:
+// - * matches any characters except /
+// - ** matches any characters including /
+// - ? matches a single character
+// - [abc] character classes
+func MatchPattern(pattern, path string) (bool, error) <span class="cov0" title="0">{
+        // Normalize path separators
+        pattern = filepath.ToSlash(pattern)
+        path = filepath.ToSlash(path)
+
+        // Handle ** patterns specially
+        if strings.Contains(pattern, "**") </span><span class="cov0" title="0">{
+                return matchDoubleStarPattern(pattern, path)
+        }</span>
+
+        // Use filepath.Match for simple patterns
+        <span class="cov0" title="0">matched, err := filepath.Match(pattern, path)
+        if err != nil </span><span class="cov0" title="0">{
+                return false, err
+        }</span>
+
+        // Also try matching just the base name
+        <span class="cov0" title="0">if !matched </span><span class="cov0" title="0">{
+                matched, err = filepath.Match(pattern, filepath.Base(path))
+        }</span>
+
+        <span class="cov0" title="0">return matched, err</span>
+}
+
+// MatchAnyPattern returns true if the path matches any of the provided patterns
+func MatchAnyPattern(patterns []string, path string) bool <span class="cov0" title="0">{
+        for _, pattern := range patterns </span><span class="cov0" title="0">{
+                matched, err := MatchPattern(pattern, path)
+                if err != nil </span><span class="cov0" title="0">{
+                        // If pattern is invalid, skip it
+                        continue</span>
+                }
+                <span class="cov0" title="0">if matched </span><span class="cov0" title="0">{
+                        return true
+                }</span>
+        }
+        <span class="cov0" title="0">return false</span>
+}
+
+// matchDoubleStarPattern handles patterns containing **
+func matchDoubleStarPattern(pattern, path string) (bool, error) <span class="cov0" title="0">{
+        // Split pattern by **
+        parts := strings.Split(pattern, "**")
+
+        // If pattern starts with **, match any prefix
+        if strings.HasPrefix(pattern, "**") </span><span class="cov0" title="0">{
+                // Remove leading **
+                if len(parts) &gt; 1 &amp;&amp; parts[0] == "" </span><span class="cov0" title="0">{
+                        parts = parts[1:]
+                }</span>
+        }
+
+        // If pattern ends with **, match any suffix
+        <span class="cov0" title="0">if strings.HasSuffix(pattern, "**") </span><span class="cov0" title="0">{
+                // Remove trailing **
+                if len(parts) &gt; 0 &amp;&amp; parts[len(parts)-1] == "" </span><span class="cov0" title="0">{
+                        parts = parts[:len(parts)-1]
+                }</span>
+        }
+
+        // Handle single ** (matches everything)
+        <span class="cov0" title="0">if len(parts) == 0 || (len(parts) == 1 &amp;&amp; parts[0] == "") </span><span class="cov0" title="0">{
+                return true, nil
+        }</span>
+
+        // For multiple parts, we need to match them in sequence
+        <span class="cov0" title="0">return matchPatternParts(parts, path)</span>
+}
+
+// matchPatternParts matches a path against pattern parts separated by **
+func matchPatternParts(parts []string, path string) (bool, error) <span class="cov0" title="0">{
+        if len(parts) == 0 </span><span class="cov0" title="0">{
+                return true, nil
+        }</span>
+
+        // Clean up empty parts and trim slashes
+        <span class="cov0" title="0">var cleanParts []string
+        for _, part := range parts </span><span class="cov0" title="0">{
+                part = strings.Trim(part, "/")
+                if part != "" </span><span class="cov0" title="0">{
+                        cleanParts = parts
+                }</span>
+        }
+
+        <span class="cov0" title="0">if len(cleanParts) == 0 </span><span class="cov0" title="0">{
+                return true, nil
+        }</span>
+
+        // For simplicity with ** patterns, check if the path contains all parts in order
+        <span class="cov0" title="0">currentPath := path
+        for i, part := range cleanParts </span><span class="cov0" title="0">{
+                part = strings.Trim(part, "/")
+                if part == "" </span><span class="cov0" title="0">{
+                        continue</span>
+                }
+
+                // For the first part, check if it matches the beginning
+                <span class="cov0" title="0">if i == 0 &amp;&amp; strings.HasPrefix(path, part) </span><span class="cov0" title="0">{
+                        // Check if this is an exact segment match
+                        matched, err := matchPathSegment(part, currentPath, true)
+                        if err != nil </span><span class="cov0" title="0">{
+                                return false, err
+                        }</span>
+                        <span class="cov0" title="0">if matched </span><span class="cov0" title="0">{
+                                // Move past this part
+                                idx := strings.Index(currentPath, "/")
+                                if idx &gt; 0 </span><span class="cov0" title="0">{
+                                        currentPath = currentPath[idx+1:]
+                                }</span> else<span class="cov0" title="0"> {
+                                        currentPath = ""
+                                }</span>
+                                <span class="cov0" title="0">continue</span>
+                        }
+                }
+
+                // For middle parts, find them anywhere
+                <span class="cov0" title="0">matched := false
+                segments := strings.Split(currentPath, "/")
+                for j, segment := range segments </span><span class="cov0" title="0">{
+                        segmentMatched, err := filepath.Match(part, segment)
+                        if err != nil </span><span class="cov0" title="0">{
+                                return false, err
+                        }</span>
+                        <span class="cov0" title="0">if segmentMatched </span><span class="cov0" title="0">{
+                                matched = true
+                                // Move past this segment
+                                if j+1 &lt; len(segments) </span><span class="cov0" title="0">{
+                                        currentPath = strings.Join(segments[j+1:], "/")
+                                }</span> else<span class="cov0" title="0"> {
+                                        currentPath = ""
+                                }</span>
+                                <span class="cov0" title="0">break</span>
+                        }
+                }
+
+                <span class="cov0" title="0">if !matched </span><span class="cov0" title="0">{
+                        return false, nil
+                }</span>
+        }
+
+        <span class="cov0" title="0">return true, nil</span>
+}
+
+// matchPathSegment checks if a pattern matches a segment at the start of the path
+func matchPathSegment(pattern, path string, atStart bool) (bool, error) <span class="cov0" title="0">{
+        segments := strings.Split(path, "/")
+        if len(segments) == 0 </span><span class="cov0" title="0">{
+                return false, nil
+        }</span>
+
+        <span class="cov0" title="0">if atStart </span><span class="cov0" title="0">{
+                return filepath.Match(pattern, segments[0])
+        }</span>
+
+        // Check any segment
+        <span class="cov0" title="0">for _, segment := range segments </span><span class="cov0" title="0">{
+                matched, err := filepath.Match(pattern, segment)
+                if err != nil </span><span class="cov0" title="0">{
+                        return false, err
+                }</span>
+                <span class="cov0" title="0">if matched </span><span class="cov0" title="0">{
+                        return true, nil
+                }</span>
+        }
+
+        <span class="cov0" title="0">return false, nil</span>
+}
+</pre>
+		
+		<pre class="file" id="file8" style="display: none">package files
+
+import (
+        "context"
+        "fmt"
+        "io/fs"
+        "os"
+        "path/filepath"
+        "strings"
+)
+
+// Scanner walks a directory tree and discovers files according to configured options
+type Scanner struct {
+        rootPath  string
+        gitignore *GitignoreMatcher
+        options   *ScanOptions
+}
+
+// NewScanner creates a new file scanner for the given root path
+func NewScanner(rootPath string, options *ScanOptions) (*Scanner, error) <span class="cov0" title="0">{
+        // Get absolute path
+        absRoot, err := filepath.Abs(rootPath)
+        if err != nil </span><span class="cov0" title="0">{
+                return nil, fmt.Errorf("failed to get absolute path: %w", err)
+        }</span>
+
+        // Verify root path exists and is a directory
+        <span class="cov0" title="0">info, err := os.Stat(absRoot)
+        if err != nil </span><span class="cov0" title="0">{
+                return nil, fmt.Errorf("failed to stat root path: %w", err)
+        }</span>
+        <span class="cov0" title="0">if !info.IsDir() </span><span class="cov0" title="0">{
+                return nil, fmt.Errorf("root path is not a directory: %s", absRoot)
+        }</span>
+
+        // Use default options if none provided
+        <span class="cov0" title="0">if options == nil </span><span class="cov0" title="0">{
+                options = DefaultScanOptions()
+        }</span>
+
+        // Initialize gitignore matcher
+        <span class="cov0" title="0">gitignoreMatcher, err := NewGitignoreMatcher(absRoot)
+        if err != nil </span><span class="cov0" title="0">{
+                return nil, fmt.Errorf("failed to initialize gitignore matcher: %w", err)
+        }</span>
+
+        // Add custom exclude patterns to gitignore
+        <span class="cov0" title="0">if len(options.ExcludePatterns) &gt; 0 </span><span class="cov0" title="0">{
+                if err := gitignoreMatcher.AddPatterns(options.ExcludePatterns); err != nil </span><span class="cov0" title="0">{
+                        return nil, fmt.Errorf("failed to add exclude patterns: %w", err)
+                }</span>
+        }
+
+        <span class="cov0" title="0">return &amp;Scanner{
+                rootPath:  absRoot,
+                gitignore: gitignoreMatcher,
+                options:   options,
+        }, nil</span>
+}
+
+// Scan walks the directory tree and returns discovered files
+func (s *Scanner) Scan(ctx context.Context) (*ScanResult, error) <span class="cov0" title="0">{
+        result := &amp;ScanResult{
+                Files:        make([]FileInfo, 0),
+                SkippedFiles: make([]string, 0),
+                Errors:       make([]error, 0),
+        }
+
+        // Walk the directory tree
+        err := filepath.WalkDir(s.rootPath, func(path string, d fs.DirEntry, err error) error </span><span class="cov0" title="0">{
+                // Check for context cancellation
+                select </span>{
+                case &lt;-ctx.Done():<span class="cov0" title="0">
+                        return ctx.Err()</span>
+                default:<span class="cov0" title="0"></span>
+                }
+
+                // Handle errors from WalkDir
+                <span class="cov0" title="0">if err != nil </span><span class="cov0" title="0">{
+                        // Log permission errors but continue
+                        if os.IsPermission(err) </span><span class="cov0" title="0">{
+                                result.Errors = append(result.Errors, fmt.Errorf("permission denied: %s", path))
+                                return nil
+                        }</span>
+                        <span class="cov0" title="0">return err</span>
+                }
+
+                // Get relative path
+                <span class="cov0" title="0">relPath, err := filepath.Rel(s.rootPath, path)
+                if err != nil </span><span class="cov0" title="0">{
+                        result.Errors = append(result.Errors, fmt.Errorf("failed to get relative path for %s: %w", path, err))
+                        return nil
+                }</span>
+
+                // Handle directories
+                <span class="cov0" title="0">if d.IsDir() </span><span class="cov0" title="0">{
+                        // Skip .git directory always
+                        if d.Name() == ".git" </span><span class="cov0" title="0">{
+                                return filepath.SkipDir
+                        }</span>
+
+                        // Skip hidden directories if configured
+                        <span class="cov0" title="0">if s.options.SkipHidden &amp;&amp; strings.HasPrefix(d.Name(), ".") &amp;&amp; path != s.rootPath </span><span class="cov0" title="0">{
+                                result.SkippedFiles = append(result.SkippedFiles, relPath)
+                                return filepath.SkipDir
+                        }</span>
+
+                        // Check gitignore patterns
+                        <span class="cov0" title="0">if s.gitignore.ShouldIgnoreDir(path) </span><span class="cov0" title="0">{
+                                result.SkippedFiles = append(result.SkippedFiles, relPath)
+                                return filepath.SkipDir
+                        }</span>
+
+                        // Try to load nested .gitignore
+                        <span class="cov0" title="0">_ = s.gitignore.LoadNestedGitignore(path)
+
+                        return nil</span>
+                }
+
+                // Handle symlinks
+                <span class="cov0" title="0">if d.Type()&amp;os.ModeSymlink != 0 </span><span class="cov0" title="0">{
+                        if !s.options.FollowSymlinks </span><span class="cov0" title="0">{
+                                result.SkippedFiles = append(result.SkippedFiles, relPath)
+                                return nil
+                        }</span>
+                        // If following symlinks, resolve and check if it's a file
+                        <span class="cov0" title="0">realPath, err := filepath.EvalSymlinks(path)
+                        if err != nil </span><span class="cov0" title="0">{
+                                result.Errors = append(result.Errors, fmt.Errorf("failed to resolve symlink %s: %w", path, err))
+                                return nil
+                        }</span>
+                        <span class="cov0" title="0">info, err := os.Stat(realPath)
+                        if err != nil </span><span class="cov0" title="0">{
+                                result.Errors = append(result.Errors, fmt.Errorf("failed to stat symlink target %s: %w", realPath, err))
+                                return nil
+                        }</span>
+                        <span class="cov0" title="0">if info.IsDir() </span><span class="cov0" title="0">{
+                                // Don't follow directory symlinks even if FollowSymlinks is true
+                                result.SkippedFiles = append(result.SkippedFiles, relPath)
+                                return nil
+                        }</span>
+                }
+
+                // Process files only
+                <span class="cov0" title="0">if !d.Type().IsRegular() </span><span class="cov0" title="0">{
+                        return nil
+                }</span>
+
+                // Skip hidden files if configured
+                <span class="cov0" title="0">if s.options.SkipHidden &amp;&amp; strings.HasPrefix(d.Name(), ".") </span><span class="cov0" title="0">{
+                        result.SkippedFiles = append(result.SkippedFiles, relPath)
+                        return nil
+                }</span>
+
+                // Check gitignore patterns
+                <span class="cov0" title="0">if s.gitignore.Match(path) </span><span class="cov0" title="0">{
+                        result.SkippedFiles = append(result.SkippedFiles, relPath)
+                        return nil
+                }</span>
+
+                // Check excluded extensions
+                <span class="cov0" title="0">ext := filepath.Ext(path)
+                if s.isExcludedExtension(ext) </span><span class="cov0" title="0">{
+                        result.SkippedFiles = append(result.SkippedFiles, relPath)
+                        return nil
+                }</span>
+
+                // Check include patterns (if specified, only include matching files)
+                <span class="cov0" title="0">if len(s.options.IncludePatterns) &gt; 0 </span><span class="cov0" title="0">{
+                        if !MatchAnyPattern(s.options.IncludePatterns, relPath) </span><span class="cov0" title="0">{
+                                result.SkippedFiles = append(result.SkippedFiles, relPath)
+                                return nil
+                        }</span>
+                }
+
+                // Get file info
+                <span class="cov0" title="0">info, err := d.Info()
+                if err != nil </span><span class="cov0" title="0">{
+                        result.Errors = append(result.Errors, fmt.Errorf("failed to get file info for %s: %w", path, err))
+                        return nil
+                }</span>
+
+                // Check if binary
+                <span class="cov0" title="0">isBinary, err := IsBinary(path)
+                if err != nil </span><span class="cov0" title="0">{
+                        // If we can't determine, assume it's binary and skip
+                        result.Errors = append(result.Errors, fmt.Errorf("failed to check if binary %s: %w", path, err))
+                        result.SkippedFiles = append(result.SkippedFiles, relPath)
+                        return nil
+                }</span>
+
+                // Create FileInfo
+                <span class="cov0" title="0">fileInfo := FileInfo{
+                        Path:         path,
+                        RelativePath: relPath,
+                        Extension:    ext,
+                        Filename:     d.Name(),
+                        Size:         info.Size(),
+                        IsBinary:     isBinary,
+                }
+
+                result.Files = append(result.Files, fileInfo)
+                return nil</span>
+        })
+
+        <span class="cov0" title="0">if err != nil &amp;&amp; err != context.Canceled &amp;&amp; err != context.DeadlineExceeded </span><span class="cov0" title="0">{
+                return nil, fmt.Errorf("failed to walk directory tree: %w", err)
+        }</span>
+
+        // If context was canceled, include that as an error
+        <span class="cov0" title="0">if err == context.Canceled || err == context.DeadlineExceeded </span><span class="cov0" title="0">{
+                result.Errors = append(result.Errors, err)
+        }</span>
+
+        <span class="cov0" title="0">return result, nil</span>
+}
+
+// isExcludedExtension checks if a file extension is in the excluded list
+func (s *Scanner) isExcludedExtension(ext string) bool <span class="cov0" title="0">{
+        if len(s.options.ExcludedExtensions) == 0 </span><span class="cov0" title="0">{
+                return false
+        }</span>
+
+        // Normalize extension (ensure it starts with .)
+        <span class="cov0" title="0">if ext != "" &amp;&amp; !strings.HasPrefix(ext, ".") </span><span class="cov0" title="0">{
+                ext = "." + ext
+        }</span>
+
+        <span class="cov0" title="0">for _, excluded := range s.options.ExcludedExtensions </span><span class="cov0" title="0">{
+                // Normalize excluded extension
+                if excluded != "" &amp;&amp; !strings.HasPrefix(excluded, ".") </span><span class="cov0" title="0">{
+                        excluded = "." + excluded
+                }</span>
+                <span class="cov0" title="0">if strings.EqualFold(ext, excluded) </span><span class="cov0" title="0">{
+                        return true
+                }</span>
+        }
+
+        <span class="cov0" title="0">return false</span>
+}
+
+// GetRootPath returns the scanner's root path
+func (s *Scanner) GetRootPath() string <span class="cov0" title="0">{
+        return s.rootPath
+}</span>
+</pre>
+		
+		<pre class="file" id="file9" style="display: none">package files
+
+// FileInfo represents metadata about a discovered file
+type FileInfo struct {
+        Path         string // Absolute file path
+        RelativePath string // Relative to repository root
+        Extension    string // Including dot (e.g., ".go")
+        Filename     string // Just the filename
+        Size         int64
+        IsBinary     bool
+}
+
+// ScanResult contains the results of a directory scan
+type ScanResult struct {
+        Files        []FileInfo
+        SkippedFiles []string
+        Errors       []error
+}
+
+// ScanOptions configures scanning behavior
+type ScanOptions struct {
+        ExcludePatterns    []string
+        IncludePatterns    []string
+        ExcludedExtensions []string
+        SkipHidden         bool
+        FollowSymlinks     bool
+}
+
+// DefaultScanOptions returns a new ScanOptions with sensible defaults
+func DefaultScanOptions() *ScanOptions <span class="cov0" title="0">{
+        return &amp;ScanOptions{
+                SkipHidden:     true,
+                FollowSymlinks: false,
+                ExcludePatterns: []string{
+                        "**/.git/**",
+                        "**/node_modules/**",
+                        "**/vendor/**",
+                },
+        }
+}</span>
+</pre>
+		
+		<pre class="file" id="file10" style="display: none">package language
+
+// C handles C and C++ source files
+type C struct {
+        BaseLanguage
+}
+
+// NewC creates a new C/C++ language handler
+func NewC() *C <span class="cov8" title="1">{
+        return &amp;C{
+                BaseLanguage: BaseLanguage{
+                        name: "C/C++",
+                        extensions: []string{
+                                ".c", ".h",
+                                ".cpp", ".hpp",
+                                ".cc", ".hh",
+                                ".cxx", ".hxx",
+                                ".c++", ".h++",
+                        },
+                        filenames:    []string{},
+                        commentStyle: CommentStyleBlock,
+                        blockStart:   "/*",
+                        blockPrefix:  " *",
+                        blockEnd:     " */",
+                },
+        }
+}</span>
+</pre>
+		
+		<pre class="file" id="file11" style="display: none">package language
+
+// YAML handles YAML and TOML configuration files
+type YAML struct {
+        BaseLanguage
+}
+
+// NewYAML creates a new YAML/TOML language handler
+func NewYAML() *YAML <span class="cov8" title="1">{
+        return &amp;YAML{
+                BaseLanguage: BaseLanguage{
+                        name:         "YAML/TOML",
+                        extensions:   []string{".yaml", ".yml", ".toml"},
+                        filenames:    []string{},
+                        commentStyle: CommentStyleLine,
+                        linePrefix:   "#",
+                },
+        }
+}</span>
+</pre>
+		
+		<pre class="file" id="file12" style="display: none">package language
+
+// CSharp handles C# source files
+type CSharp struct {
+        BaseLanguage
+}
+
+// NewCSharp creates a new C# language handler
+func NewCSharp() *CSharp <span class="cov8" title="1">{
+        return &amp;CSharp{
+                BaseLanguage: BaseLanguage{
+                        name:         "C#",
+                        extensions:   []string{".cs"},
+                        filenames:    []string{},
+                        commentStyle: CommentStyleBlock,
+                        blockStart:   "/*",
+                        blockPrefix:  " *",
+                        blockEnd:     " */",
+                },
+        }
+}</span>
+</pre>
+		
+		<pre class="file" id="file13" style="display: none">package language
+
+// Dockerfile handles Dockerfile and Containerfile files
+type Dockerfile struct {
+        BaseLanguage
+}
+
+// NewDockerfile creates a new Dockerfile language handler
+func NewDockerfile() *Dockerfile <span class="cov8" title="1">{
+        return &amp;Dockerfile{
+                BaseLanguage: BaseLanguage{
+                        name:         "Dockerfile",
+                        extensions:   []string{".dockerfile"},
+                        filenames:    []string{"Dockerfile", "Containerfile", "dockerfile", "containerfile"},
+                        commentStyle: CommentStyleLine,
+                        linePrefix:   "#",
+                },
+        }
+}</span>
+</pre>
+		
+		<pre class="file" id="file14" style="display: none">package language
+
+// GoLang handles Go source files
+type GoLang struct {
+        BaseLanguage
+}
+
+// NewGoLang creates a new Go language handler
+func NewGoLang() *GoLang <span class="cov8" title="1">{
+        return &amp;GoLang{
+                BaseLanguage: BaseLanguage{
+                        name:         "Go",
+                        extensions:   []string{".go"},
+                        filenames:    []string{},
+                        commentStyle: CommentStyleLine,
+                        linePrefix:   "//",
+                },
+        }
+}</span>
+</pre>
+		
+		<pre class="file" id="file15" style="display: none">package language
+
+// Java handles Java source files
+type Java struct {
+        BaseLanguage
+}
+
+// NewJava creates a new Java language handler
+func NewJava() *Java <span class="cov8" title="1">{
+        return &amp;Java{
+                BaseLanguage: BaseLanguage{
+                        name:         "Java",
+                        extensions:   []string{".java"},
+                        filenames:    []string{},
+                        commentStyle: CommentStyleBlock,
+                        blockStart:   "/*",
+                        blockPrefix:  " *",
+                        blockEnd:     " */",
+                },
+        }
+}</span>
+</pre>
+		
+		<pre class="file" id="file16" style="display: none">package language
+
+// JavaScript handles JavaScript and TypeScript files
+type JavaScript struct {
+        BaseLanguage
+}
+
+// NewJavaScript creates a new JavaScript language handler
+func NewJavaScript() *JavaScript <span class="cov8" title="1">{
+        return &amp;JavaScript{
+                BaseLanguage: BaseLanguage{
+                        name: "JavaScript",
+                        extensions: []string{
+                                ".js", ".ts", ".jsx", ".tsx",
+                                ".mjs", ".cjs", ".mts", ".cts",
+                        },
+                        filenames:    []string{},
+                        commentStyle: CommentStyleBlock,
+                        blockStart:   "/*",
+                        blockPrefix:  " *",
+                        blockEnd:     " */",
+                },
+        }
+}</span>
+
+// PreserveLines handles shebang for Node.js scripts
+func (j *JavaScript) PreserveLines(content []byte) []string <span class="cov8" title="1">{
+        var preserve []string
+
+        if shebang := getShebangLine(content); shebang != "" </span><span class="cov8" title="1">{
+                preserve = append(preserve, shebang)
+        }</span>
+
+        <span class="cov8" title="1">return preserve</span>
+}
+
+// InsertPosition returns the byte offset where copyright should be inserted
+func (j *JavaScript) InsertPosition(content []byte) int <span class="cov8" title="1">{
+        return calculateInsertPosition(j.PreserveLines(content))
+}</span>
+</pre>
+		
+		<pre class="file" id="file17" style="display: none">package language
+
+// JSON handles JSON files
+// Note: JSON doesn't support comments, so copyright headers cannot be added
+type JSON struct {
+        BaseLanguage
+}
+
+// NewJSON creates a new JSON language handler
+func NewJSON() *JSON <span class="cov8" title="1">{
+        return &amp;JSON{
+                BaseLanguage: BaseLanguage{
+                        name:         "JSON",
+                        extensions:   []string{".json", ".jsonc"},
+                        filenames:    []string{},
+                        commentStyle: CommentStyleNone,
+                },
+        }
+}</span>
+</pre>
+		
+		<pre class="file" id="file18" style="display: none">// Package language provides language-specific copyright header formatting.
+//
+// This package supports automatic detection of programming languages and file types
+// based on file extensions and specific filenames, and provides language-appropriate
+// comment formatting for copyright headers.
+//
+// Supported Languages:
+//   - Go (.go)
+//   - JavaScript/TypeScript (.js, .ts, .jsx, .tsx, .mjs, .cjs)
+//   - Java (.java)
+//   - C# (.cs)
+//   - Rust (.rs)
+//   - C/C++ (.c, .h, .cpp, .hpp, .cc, .cxx)
+//   - Python (.py, .pyw)
+//   - Ruby (.rb, .rake, Rakefile, Gemfile)
+//   - Shell (.sh, .bash, .zsh, .fish)
+//   - YAML/TOML (.yaml, .yml, .toml)
+//   - HTML/XML (.html, .htm, .xml, .svg)
+//   - CSS (.css, .scss, .sass, .less)
+//   - SQL (.sql)
+//   - Markdown (.md, .markdown) - no comments supported
+//   - JSON (.json) - no comments supported
+//   - Protocol Buffers (.proto)
+//   - Makefile (Makefile, makefile, GNUmakefile)
+//   - Dockerfile (Dockerfile, Containerfile)
+//   - Terraform (.tf, .tfvars, .hcl)
+//
+// Usage:
+//
+//        registry := language.GetRegistry()
+//        lang := registry.GetLanguage("main.go")
+//        if lang != nil &amp;&amp; lang.CanHaveComments() {
+//            copyright := "Copyright 2025 Lean Security Co\nSPDX-License-Identifier: MIT"
+//            header := lang.FormatHeader(copyright)
+//            // header contains properly formatted comment
+//        }
+//
+// Special Features:
+//   - Preserves shebang lines (#!) for scripts
+//   - Preserves Python encoding declarations
+//   - Preserves Ruby encoding declarations
+//   - Preserves XML declarations
+//   - Case-insensitive filename matching for special files
+package language
+
+import (
+        "bytes"
+        "strings"
+)
+
+// CommentStyle defines the type of comment syntax a language uses
+type CommentStyle int
+
+const (
+        // CommentStyleNone indicates the file type doesn't support comments
+        CommentStyleNone CommentStyle = iota
+        // CommentStyleLine indicates line comments (e.g., //, #)
+        CommentStyleLine
+        // CommentStyleBlock indicates block comments (e.g., /* */)
+        CommentStyleBlock
+        // CommentStyleHTML indicates HTML-style comments (e.g., &lt;!-- --&gt;)
+        CommentStyleHTML
+        // CommentStyleSQL indicates SQL-style comments (e.g., --)
+        CommentStyleSQL
+)
+
+// Language defines the interface for language-specific copyright header handling
+type Language interface {
+        // Name returns the human-readable name of the language
+        Name() string
+
+        // Extensions returns the file extensions this language handles (e.g., ".go")
+        Extensions() []string
+
+        // Filenames returns specific filenames this language handles (e.g., "Makefile")
+        Filenames() []string
+
+        // CanHaveComments returns whether this file type supports comments
+        CanHaveComments() bool
+
+        // FormatHeader formats the copyright text as a comment block for this language
+        FormatHeader(copyrightText string) string
+
+        // PreserveLines returns lines that should be preserved before the copyright
+        // (e.g., shebang lines, encoding declarations)
+        PreserveLines(content []byte) []string
+
+        // InsertPosition returns the byte offset where the copyright should be inserted
+        InsertPosition(content []byte) int
+}
+
+// BaseLanguage provides common implementation for language handlers
+type BaseLanguage struct {
+        name         string
+        extensions   []string
+        filenames    []string
+        commentStyle CommentStyle
+        linePrefix   string // For line and hash comments
+        blockStart   string // For block comments
+        blockPrefix  string // For block comments (continuation)
+        blockEnd     string // For block comments
+}
+
+// Name returns the language name
+func (b *BaseLanguage) Name() string <span class="cov8" title="1">{
+        return b.name
+}</span>
+
+// Extensions returns the file extensions
+func (b *BaseLanguage) Extensions() []string <span class="cov8" title="1">{
+        return b.extensions
+}</span>
+
+// Filenames returns specific filenames
+func (b *BaseLanguage) Filenames() []string <span class="cov8" title="1">{
+        return b.filenames
+}</span>
+
+// CanHaveComments returns whether the language supports comments
+func (b *BaseLanguage) CanHaveComments() bool <span class="cov8" title="1">{
+        return b.commentStyle != CommentStyleNone
+}</span>
+
+// FormatHeader formats the copyright text as a comment
+func (b *BaseLanguage) FormatHeader(copyrightText string) string <span class="cov8" title="1">{
+        lines := strings.Split(strings.TrimSpace(copyrightText), "\n")
+
+        switch b.commentStyle </span>{
+        case CommentStyleLine:<span class="cov8" title="1">
+                // Line comments like // or #
+                var formatted []string
+                for _, line := range lines </span><span class="cov8" title="1">{
+                        if line == "" </span><span class="cov0" title="0">{
+                                formatted = append(formatted, b.linePrefix)
+                        }</span> else<span class="cov8" title="1"> {
+                                formatted = append(formatted, b.linePrefix+" "+line)
+                        }</span>
+                }
+                <span class="cov8" title="1">return strings.Join(formatted, "\n") + "\n"</span>
+
+        case CommentStyleBlock, CommentStyleHTML:<span class="cov8" title="1">
+                // Block comments like /* */ or &lt;!-- --&gt;
+                var formatted []string
+                formatted = append(formatted, b.blockStart)
+                for _, line := range lines </span><span class="cov8" title="1">{
+                        if line == "" </span><span class="cov0" title="0">{
+                                formatted = append(formatted, b.blockPrefix)
+                        }</span> else<span class="cov8" title="1"> {
+                                formatted = append(formatted, b.blockPrefix+" "+line)
+                        }</span>
+                }
+                <span class="cov8" title="1">formatted = append(formatted, b.blockEnd)
+                return strings.Join(formatted, "\n") + "\n"</span>
+
+        case CommentStyleSQL:<span class="cov8" title="1">
+                // SQL-style comments with --
+                var formatted []string
+                for _, line := range lines </span><span class="cov8" title="1">{
+                        if line == "" </span><span class="cov0" title="0">{
+                                formatted = append(formatted, b.linePrefix)
+                        }</span> else<span class="cov8" title="1"> {
+                                formatted = append(formatted, b.linePrefix+" "+line)
+                        }</span>
+                }
+                <span class="cov8" title="1">return strings.Join(formatted, "\n") + "\n"</span>
+
+        case CommentStyleNone:<span class="cov0" title="0">
+                // No comment support
+                return ""</span>
+
+        default:<span class="cov0" title="0">
+                return ""</span>
+        }
+}
+
+// PreserveLines returns lines to preserve (default: none)
+func (b *BaseLanguage) PreserveLines(content []byte) []string <span class="cov8" title="1">{
+        return nil
+}</span>
+
+// InsertPosition returns the position to insert the copyright
+// Note: This method cannot be implemented in BaseLanguage because it needs to call
+// the overridden PreserveLines method from the specific language implementation.
+// Each language that overrides PreserveLines must also override InsertPosition.
+func (b *BaseLanguage) InsertPosition(content []byte) int <span class="cov8" title="1">{
+        // For languages without special preserved lines, insert at the beginning
+        return 0
+}</span>
+
+// hasShebang checks if the content starts with a shebang line
+func hasShebang(content []byte) bool <span class="cov8" title="1">{
+        return bytes.HasPrefix(content, []byte("#!"))
+}</span>
+
+// getShebangLine extracts the shebang line if present
+func getShebangLine(content []byte) string <span class="cov8" title="1">{
+        if !hasShebang(content) </span><span class="cov8" title="1">{
+                return ""
+        }</span>
+
+        <span class="cov8" title="1">idx := bytes.IndexByte(content, '\n')
+        if idx == -1 </span><span class="cov0" title="0">{
+                return string(content)
+        }</span>
+        <span class="cov8" title="1">return string(content[:idx+1])</span>
+}
+
+// hasPythonEncoding checks if a line is a Python encoding declaration
+func hasPythonEncoding(line string) bool <span class="cov8" title="1">{
+        line = strings.TrimSpace(line)
+        if !strings.HasPrefix(line, "#") </span><span class="cov8" title="1">{
+                return false
+        }</span>
+
+        // Python encoding: # -*- coding: utf-8 -*-
+        // or: # coding: utf-8
+        // or: # coding=utf-8
+        <span class="cov8" title="1">return strings.Contains(line, "coding:") ||
+                strings.Contains(line, "coding=") ||
+                strings.Contains(line, "-*- coding")</span>
+}
+
+// calculateInsertPosition calculates byte position after preserved lines
+func calculateInsertPosition(preserved []string) int <span class="cov8" title="1">{
+        position := 0
+        for _, line := range preserved </span><span class="cov8" title="1">{
+                position += len(line)
+        }</span>
+        <span class="cov8" title="1">return position</span>
+}
+</pre>
+		
+		<pre class="file" id="file19" style="display: none">package language
+
+// Makefile handles Makefile files
+type Makefile struct {
+        BaseLanguage
+}
+
+// NewMakefile creates a new Makefile language handler
+func NewMakefile() *Makefile <span class="cov8" title="1">{
+        return &amp;Makefile{
+                BaseLanguage: BaseLanguage{
+                        name:         "Makefile",
+                        extensions:   []string{".mk"},
+                        filenames:    []string{"Makefile", "makefile", "GNUmakefile"},
+                        commentStyle: CommentStyleLine,
+                        linePrefix:   "#",
+                },
+        }
+}</span>
+</pre>
+		
+		<pre class="file" id="file20" style="display: none">package language
+
+// Markdown handles Markdown files
+// Note: Markdown doesn't support comments, so copyright headers cannot be added
+type Markdown struct {
+        BaseLanguage
+}
+
+// NewMarkdown creates a new Markdown language handler
+func NewMarkdown() *Markdown <span class="cov8" title="1">{
+        return &amp;Markdown{
+                BaseLanguage: BaseLanguage{
+                        name:         "Markdown",
+                        extensions:   []string{".md", ".markdown"},
+                        filenames:    []string{},
+                        commentStyle: CommentStyleNone,
+                },
+        }
+}</span>
+</pre>
+		
+		<pre class="file" id="file21" style="display: none">package language
+
+import (
+        "bytes"
+        "strings"
+)
+
+// HTML handles HTML and XML files
+type HTML struct {
+        BaseLanguage
+}
+
+// NewHTML creates a new HTML/XML language handler
+func NewHTML() *HTML <span class="cov8" title="1">{
+        return &amp;HTML{
+                BaseLanguage: BaseLanguage{
+                        name:         "HTML/XML",
+                        extensions:   []string{".html", ".htm", ".xml", ".xhtml", ".svg"},
+                        filenames:    []string{},
+                        commentStyle: CommentStyleHTML,
+                        blockStart:   "&lt;!--",
+                        blockPrefix:  "  ",
+                        blockEnd:     "--&gt;",
+                },
+        }
+}</span>
+
+// PreserveLines handles XML declaration for XML files
+func (h *HTML) PreserveLines(content []byte) []string <span class="cov8" title="1">{
+        var preserve []string
+
+        // Check for XML declaration (&lt;?xml version="1.0" ?&gt;)
+        if bytes.HasPrefix(bytes.TrimSpace(content), []byte("&lt;?xml")) </span><span class="cov0" title="0">{
+                idx := bytes.Index(content, []byte("?&gt;"))
+                if idx != -1 </span><span class="cov0" title="0">{
+                        // Find the newline after the declaration
+                        endIdx := idx + 2
+                        newlineIdx := bytes.IndexByte(content[endIdx:], '\n')
+                        if newlineIdx != -1 </span><span class="cov0" title="0">{
+                                preserve = append(preserve, string(content[:endIdx+newlineIdx+1]))
+                        }</span> else<span class="cov0" title="0"> {
+                                preserve = append(preserve, string(content[:endIdx])+"\n")
+                        }</span>
+                }
+        }
+
+        // Check for DOCTYPE declaration
+        <span class="cov8" title="1">trimmed := bytes.TrimSpace(content)
+        if bytes.HasPrefix(trimmed, []byte("&lt;!DOCTYPE")) || bytes.HasPrefix(trimmed, []byte("&lt;!doctype")) </span><span class="cov8" title="1">{
+                // Find the position in original content
+                doctypeStart := bytes.Index(content, []byte("&lt;!DOCTYPE"))
+                if doctypeStart == -1 </span><span class="cov0" title="0">{
+                        doctypeStart = bytes.Index(content, []byte("&lt;!doctype"))
+                }</span>
+
+                <span class="cov8" title="1">if doctypeStart != -1 </span><span class="cov8" title="1">{
+                        remaining := content[doctypeStart:]
+                        idx := bytes.IndexByte(remaining, '&gt;')
+                        if idx != -1 </span><span class="cov8" title="1">{
+                                // Find the newline after the declaration
+                                endIdx := doctypeStart + idx + 1
+                                newlineIdx := bytes.IndexByte(content[endIdx:], '\n')
+                                if newlineIdx != -1 </span><span class="cov8" title="1">{
+                                        doctype := string(content[:endIdx+newlineIdx+1])
+                                        // Avoid duplicates
+                                        if len(preserve) == 0 || !strings.Contains(preserve[0], "DOCTYPE") </span><span class="cov8" title="1">{
+                                                preserve = append(preserve, doctype)
+                                        }</span>
+                                }
+                        }
+                }
+        }
+
+        <span class="cov8" title="1">return preserve</span>
+}
+
+// InsertPosition returns the byte offset where copyright should be inserted
+func (h *HTML) InsertPosition(content []byte) int <span class="cov8" title="1">{
+        return calculateInsertPosition(h.PreserveLines(content))
+}</span>
+</pre>
+		
+		<pre class="file" id="file22" style="display: none">package language
+
+// ProtocolBuffers handles Protocol Buffer files
+type ProtocolBuffers struct {
+        BaseLanguage
+}
+
+// NewProtocolBuffers creates a new Protocol Buffers language handler
+func NewProtocolBuffers() *ProtocolBuffers <span class="cov8" title="1">{
+        return &amp;ProtocolBuffers{
+                BaseLanguage: BaseLanguage{
+                        name:         "Protocol Buffers",
+                        extensions:   []string{".proto"},
+                        filenames:    []string{},
+                        commentStyle: CommentStyleLine,
+                        linePrefix:   "//",
+                },
+        }
+}</span>
+</pre>
+		
+		<pre class="file" id="file23" style="display: none">package language
+
+import (
+        "bytes"
+        "strings"
+)
+
+// Python handles Python source files
+type Python struct {
+        BaseLanguage
+}
+
+// NewPython creates a new Python language handler
+func NewPython() *Python <span class="cov8" title="1">{
+        return &amp;Python{
+                BaseLanguage: BaseLanguage{
+                        name:         "Python",
+                        extensions:   []string{".py", ".pyw"},
+                        filenames:    []string{},
+                        commentStyle: CommentStyleLine,
+                        linePrefix:   "#",
+                },
+        }
+}</span>
+
+// PreserveLines handles shebang and encoding declarations for Python
+func (p *Python) PreserveLines(content []byte) []string <span class="cov8" title="1">{
+        var preserve []string
+
+        // Check for shebang
+        if shebang := getShebangLine(content); shebang != "" </span><span class="cov8" title="1">{
+                preserve = append(preserve, shebang)
+        }</span>
+
+        // Check for encoding declaration (must be on first or second line)
+        <span class="cov8" title="1">lines := bytes.SplitN(content, []byte("\n"), 3)
+
+        // Check first line if not shebang
+        if len(preserve) == 0 &amp;&amp; len(lines) &gt; 0 </span><span class="cov8" title="1">{
+                line := strings.TrimSpace(string(lines[0]))
+                if hasPythonEncoding(line) </span><span class="cov8" title="1">{
+                        preserve = append(preserve, string(lines[0])+"\n")
+                }</span>
+        }
+
+        // Check second line for encoding
+        <span class="cov8" title="1">if len(lines) &gt; 1 </span><span class="cov8" title="1">{
+                line := strings.TrimSpace(string(lines[1]))
+                if hasPythonEncoding(line) </span><span class="cov8" title="1">{
+                        preserve = append(preserve, string(lines[1])+"\n")
+                }</span>
+        }
+
+        <span class="cov8" title="1">return preserve</span>
+}
+
+// InsertPosition returns the byte offset where copyright should be inserted
+func (p *Python) InsertPosition(content []byte) int <span class="cov8" title="1">{
+        return calculateInsertPosition(p.PreserveLines(content))
+}</span>
+</pre>
+		
+		<pre class="file" id="file24" style="display: none">package language
+
+import (
+        "path/filepath"
+        "strings"
+        "sync"
+)
+
+// Registry manages the mapping of file extensions and names to language handlers
+type Registry struct {
+        mu                 sync.RWMutex
+        extensionMap       map[string]Language
+        filenameMap        map[string]Language
+        caseInsensitiveMap map[string]Language // For case-insensitive filename matching
+}
+
+var defaultRegistry *Registry
+var once sync.Once
+
+// GetRegistry returns the singleton registry instance
+func GetRegistry() *Registry <span class="cov8" title="1">{
+        once.Do(func() </span><span class="cov8" title="1">{
+                defaultRegistry = &amp;Registry{
+                        extensionMap:       make(map[string]Language),
+                        filenameMap:        make(map[string]Language),
+                        caseInsensitiveMap: make(map[string]Language),
+                }
+                registerAllLanguages()
+        }</span>)
+        <span class="cov8" title="1">return defaultRegistry</span>
+}
+
+// Register adds a language to the registry
+func (r *Registry) Register(lang Language) <span class="cov8" title="1">{
+        r.mu.Lock()
+        defer r.mu.Unlock()
+
+        // Register extensions
+        for _, ext := range lang.Extensions() </span><span class="cov8" title="1">{
+                r.extensionMap[ext] = lang
+        }</span>
+
+        // Register specific filenames
+        <span class="cov8" title="1">for _, filename := range lang.Filenames() </span><span class="cov8" title="1">{
+                r.filenameMap[filename] = lang
+                // Also register lowercase version for case-insensitive matching
+                r.caseInsensitiveMap[strings.ToLower(filename)] = lang
+        }</span>
+}
+
+// GetLanguage returns the language handler for a given filename
+func (r *Registry) GetLanguage(filename string) Language <span class="cov8" title="1">{
+        r.mu.RLock()
+        defer r.mu.RUnlock()
+
+        // Extract the base filename
+        base := filepath.Base(filename)
+
+        // First, check exact filename match
+        if lang, ok := r.filenameMap[base]; ok </span><span class="cov8" title="1">{
+                return lang
+        }</span>
+
+        // Check case-insensitive filename match
+        <span class="cov8" title="1">if lang, ok := r.caseInsensitiveMap[strings.ToLower(base)]; ok </span><span class="cov0" title="0">{
+                return lang
+        }</span>
+
+        // Then check by extension
+        <span class="cov8" title="1">ext := filepath.Ext(filename)
+        if lang, ok := r.extensionMap[ext]; ok </span><span class="cov8" title="1">{
+                return lang
+        }</span>
+
+        // Check for double extensions (e.g., .test.js)
+        <span class="cov8" title="1">if len(ext) &gt; 0 </span><span class="cov8" title="1">{
+                // Remove the extension and try again
+                nameWithoutExt := strings.TrimSuffix(base, ext)
+                secondExt := filepath.Ext(nameWithoutExt)
+                if len(secondExt) &gt; 0 </span><span class="cov0" title="0">{
+                        combinedExt := secondExt + ext
+                        if lang, ok := r.extensionMap[combinedExt]; ok </span><span class="cov0" title="0">{
+                                return lang
+                        }</span>
+                }
+        }
+
+        <span class="cov8" title="1">return nil</span>
+}
+
+// SupportedExtensions returns all registered file extensions
+func (r *Registry) SupportedExtensions() []string <span class="cov0" title="0">{
+        r.mu.RLock()
+        defer r.mu.RUnlock()
+
+        exts := make([]string, 0, len(r.extensionMap))
+        for ext := range r.extensionMap </span><span class="cov0" title="0">{
+                exts = append(exts, ext)
+        }</span>
+        <span class="cov0" title="0">return exts</span>
+}
+
+// SupportedFilenames returns all registered specific filenames
+func (r *Registry) SupportedFilenames() []string <span class="cov0" title="0">{
+        r.mu.RLock()
+        defer r.mu.RUnlock()
+
+        names := make([]string, 0, len(r.filenameMap))
+        for name := range r.filenameMap </span><span class="cov0" title="0">{
+                names = append(names, name)
+        }</span>
+        <span class="cov0" title="0">return names</span>
+}
+
+// registerAllLanguages registers all built-in language handlers
+func registerAllLanguages() <span class="cov8" title="1">{
+        registry := defaultRegistry
+
+        // Register all language handlers
+        registry.Register(NewGoLang())
+        registry.Register(NewJavaScript())
+        registry.Register(NewJava())
+        registry.Register(NewCSharp())
+        registry.Register(NewRust())
+        registry.Register(NewC())
+        registry.Register(NewPython())
+        registry.Register(NewRuby())
+        registry.Register(NewShell())
+        registry.Register(NewYAML())
+        registry.Register(NewHTML())
+        registry.Register(NewCSS())
+        registry.Register(NewSQL())
+        registry.Register(NewMarkdown())
+        registry.Register(NewJSON())
+        registry.Register(NewProtocolBuffers())
+        registry.Register(NewMakefile())
+        registry.Register(NewDockerfile())
+        registry.Register(NewTerraform())
+}</span>
+</pre>
+		
+		<pre class="file" id="file25" style="display: none">package language
+
+import (
+        "bytes"
+        "strings"
+)
+
+// Ruby handles Ruby source files
+type Ruby struct {
+        BaseLanguage
+}
+
+// NewRuby creates a new Ruby language handler
+func NewRuby() *Ruby <span class="cov8" title="1">{
+        return &amp;Ruby{
+                BaseLanguage: BaseLanguage{
+                        name:         "Ruby",
+                        extensions:   []string{".rb", ".rake", ".gemspec"},
+                        filenames:    []string{"Rakefile", "Gemfile"},
+                        commentStyle: CommentStyleLine,
+                        linePrefix:   "#",
+                },
+        }
+}</span>
+
+// PreserveLines handles shebang and encoding declarations for Ruby
+func (r *Ruby) PreserveLines(content []byte) []string <span class="cov8" title="1">{
+        var preserve []string
+
+        // Check for shebang
+        if shebang := getShebangLine(content); shebang != "" </span><span class="cov8" title="1">{
+                preserve = append(preserve, shebang)
+        }</span>
+
+        // Check for encoding declaration (must be on first or second line)
+        // Ruby encoding: # encoding: utf-8 or # coding: utf-8
+        <span class="cov8" title="1">lines := bytes.SplitN(content, []byte("\n"), 3)
+
+        // Check first line if not shebang
+        if len(preserve) == 0 &amp;&amp; len(lines) &gt; 0 </span><span class="cov0" title="0">{
+                line := strings.TrimSpace(string(lines[0]))
+                if hasRubyEncoding(line) </span><span class="cov0" title="0">{
+                        preserve = append(preserve, string(lines[0])+"\n")
+                }</span>
+        }
+
+        // Check second line for encoding
+        <span class="cov8" title="1">if len(lines) &gt; 1 </span><span class="cov8" title="1">{
+                line := strings.TrimSpace(string(lines[1]))
+                if hasRubyEncoding(line) </span><span class="cov8" title="1">{
+                        preserve = append(preserve, string(lines[1])+"\n")
+                }</span>
+        }
+
+        <span class="cov8" title="1">return preserve</span>
+}
+
+// InsertPosition returns the byte offset where copyright should be inserted
+func (r *Ruby) InsertPosition(content []byte) int <span class="cov8" title="1">{
+        return calculateInsertPosition(r.PreserveLines(content))
+}</span>
+
+// hasRubyEncoding checks if a line is a Ruby encoding declaration
+func hasRubyEncoding(line string) bool <span class="cov8" title="1">{
+        line = strings.TrimSpace(line)
+        if !strings.HasPrefix(line, "#") </span><span class="cov8" title="1">{
+                return false
+        }</span>
+
+        // Ruby encoding: # encoding: utf-8
+        // or: # coding: utf-8
+        <span class="cov8" title="1">return strings.Contains(line, "encoding:") ||
+                strings.Contains(line, "coding:")</span>
+}
+</pre>
+		
+		<pre class="file" id="file26" style="display: none">package language
+
+// Rust handles Rust source files
+type Rust struct {
+        BaseLanguage
+}
+
+// NewRust creates a new Rust language handler
+func NewRust() *Rust <span class="cov8" title="1">{
+        return &amp;Rust{
+                BaseLanguage: BaseLanguage{
+                        name:         "Rust",
+                        extensions:   []string{".rs"},
+                        filenames:    []string{},
+                        commentStyle: CommentStyleLine,
+                        linePrefix:   "//",
+                },
+        }
+}</span>
+</pre>
+		
+		<pre class="file" id="file27" style="display: none">package language
+
+// Shell handles shell script files
+type Shell struct {
+        BaseLanguage
+}
+
+// NewShell creates a new Shell language handler
+func NewShell() *Shell <span class="cov8" title="1">{
+        return &amp;Shell{
+                BaseLanguage: BaseLanguage{
+                        name:         "Shell",
+                        extensions:   []string{".sh", ".bash", ".zsh", ".fish", ".ksh"},
+                        filenames:    []string{".bashrc", ".zshrc", ".bash_profile", ".profile"},
+                        commentStyle: CommentStyleLine,
+                        linePrefix:   "#",
+                },
+        }
+}</span>
+
+// PreserveLines handles shebang for shell scripts
+func (s *Shell) PreserveLines(content []byte) []string <span class="cov8" title="1">{
+        var preserve []string
+
+        if shebang := getShebangLine(content); shebang != "" </span><span class="cov8" title="1">{
+                preserve = append(preserve, shebang)
+        }</span>
+
+        <span class="cov8" title="1">return preserve</span>
+}
+
+// InsertPosition returns the byte offset where copyright should be inserted
+func (s *Shell) InsertPosition(content []byte) int <span class="cov8" title="1">{
+        return calculateInsertPosition(s.PreserveLines(content))
+}</span>
+</pre>
+		
+		<pre class="file" id="file28" style="display: none">package language
+
+// SQL handles SQL files
+type SQL struct {
+        BaseLanguage
+}
+
+// NewSQL creates a new SQL language handler
+func NewSQL() *SQL <span class="cov8" title="1">{
+        return &amp;SQL{
+                BaseLanguage: BaseLanguage{
+                        name:         "SQL",
+                        extensions:   []string{".sql"},
+                        filenames:    []string{},
+                        commentStyle: CommentStyleSQL,
+                        linePrefix:   "--",
+                },
+        }
+}</span>
+</pre>
+		
+		<pre class="file" id="file29" style="display: none">package language
+
+// CSS handles CSS and preprocessor files
+type CSS struct {
+        BaseLanguage
+}
+
+// NewCSS creates a new CSS language handler
+func NewCSS() *CSS <span class="cov8" title="1">{
+        return &amp;CSS{
+                BaseLanguage: BaseLanguage{
+                        name:         "CSS",
+                        extensions:   []string{".css", ".scss", ".sass", ".less"},
+                        filenames:    []string{},
+                        commentStyle: CommentStyleBlock,
+                        blockStart:   "/*",
+                        blockPrefix:  " *",
+                        blockEnd:     " */",
+                },
+        }
+}</span>
+</pre>
+		
+		<pre class="file" id="file30" style="display: none">package language
+
+// Terraform handles Terraform and HCL files
+type Terraform struct {
+        BaseLanguage
+}
+
+// NewTerraform creates a new Terraform language handler
+func NewTerraform() *Terraform <span class="cov8" title="1">{
+        return &amp;Terraform{
+                BaseLanguage: BaseLanguage{
+                        name:         "Terraform",
+                        extensions:   []string{".tf", ".tfvars", ".hcl"},
+                        filenames:    []string{},
+                        commentStyle: CommentStyleLine,
+                        linePrefix:   "#",
+                },
+        }
+}</span>
+
+// Note: Terraform supports both # and /* */ style comments
+// We use # by default as it's more common in Terraform configurations
+</pre>
+		
+		<pre class="file" id="file31" style="display: none">package license
+
+import (
+        "bytes"
+        "fmt"
+        "os"
+        "path/filepath"
+        "text/template"
+)
+
+// LicenseData for template rendering
+type LicenseData struct {
+        Year    string
+        Company string
+        Author  string
+}
+
+// Manager handles LICENSE file operations
+type Manager struct {
+        licenseType string
+        customText  string
+        data        *LicenseData
+}
+
+// NewManager creates a new license manager
+func NewManager(licenseType, customText string, data *LicenseData) *Manager <span class="cov8" title="1">{
+        return &amp;Manager{
+                licenseType: licenseType,
+                customText:  customText,
+                data:        data,
+        }
+}</span>
+
+// commonLicenseNames lists common LICENSE file names to check
+var commonLicenseNames = []string{
+        "LICENSE",
+        "LICENSE.txt",
+        "LICENSE.md",
+        "COPYING",
+        "COPYING.txt",
+        "License",
+        "license",
+        "license.txt",
+}
+
+// Exists checks if a LICENSE file exists in the directory
+func (m *Manager) Exists(dir string) bool <span class="cov8" title="1">{
+        _, exists := m.FindLicense(dir)
+        return exists
+}</span>
+
+// FindLicense searches for a LICENSE file in the directory
+// Returns the path to the LICENSE file and whether it was found
+func (m *Manager) FindLicense(dir string) (string, bool) <span class="cov8" title="1">{
+        for _, name := range commonLicenseNames </span><span class="cov8" title="1">{
+                path := filepath.Join(dir, name)
+                if _, err := os.Stat(path); err == nil </span><span class="cov8" title="1">{
+                        return path, true
+                }</span>
+        }
+        <span class="cov8" title="1">return "", false</span>
+}
+
+// Generate generates the license content based on the license type
+func (m *Manager) Generate() (string, error) <span class="cov8" title="1">{
+        // Handle custom license type
+        if m.licenseType == "custom" </span><span class="cov8" title="1">{
+                if m.customText == "" </span><span class="cov8" title="1">{
+                        return "", fmt.Errorf("custom license text is required for custom license type")
+                }</span>
+                <span class="cov8" title="1">return m.customText, nil</span>
+        }
+
+        // Get the template
+        <span class="cov8" title="1">templateContent, err := GetTemplate(m.licenseType)
+        if err != nil </span><span class="cov8" title="1">{
+                return "", err
+        }</span>
+
+        // Parse and execute the template
+        <span class="cov8" title="1">tmpl, err := template.New("license").Parse(templateContent)
+        if err != nil </span><span class="cov0" title="0">{
+                return "", fmt.Errorf("failed to parse license template: %w", err)
+        }</span>
+
+        <span class="cov8" title="1">var buf bytes.Buffer
+        if err := tmpl.Execute(&amp;buf, m.data); err != nil </span><span class="cov0" title="0">{
+                return "", fmt.Errorf("failed to execute license template: %w", err)
+        }</span>
+
+        <span class="cov8" title="1">return buf.String(), nil</span>
+}
+
+// Create creates a LICENSE file in the specified directory
+func (m *Manager) Create(dir string) error <span class="cov8" title="1">{
+        // Check if a LICENSE file already exists
+        if existingPath, exists := m.FindLicense(dir); exists </span><span class="cov8" title="1">{
+                return fmt.Errorf("license file already exists: %s", existingPath)
+        }</span>
+
+        // Generate the license content
+        <span class="cov8" title="1">content, err := m.Generate()
+        if err != nil </span><span class="cov0" title="0">{
+                return err
+        }</span>
+
+        // Create the LICENSE file
+        <span class="cov8" title="1">licensePath := filepath.Join(dir, "LICENSE")
+        if err := os.WriteFile(licensePath, []byte(content), 0644); err != nil </span><span class="cov0" title="0">{
+                return fmt.Errorf("failed to write LICENSE file: %w", err)
+        }</span>
+
+        <span class="cov8" title="1">return nil</span>
+}
+</pre>
+		
+		<pre class="file" id="file32" style="display: none">package license
+
+import (
+        "embed"
+        "fmt"
+        "path/filepath"
+        "sort"
+        "strings"
+)
+
+//go:embed templates/*.txt
+var licenseTemplates embed.FS
+
+// GetTemplate returns template content for a license type
+func GetTemplate(licenseType string) (string, error) <span class="cov8" title="1">{
+        filename := fmt.Sprintf("templates/%s.txt", licenseType)
+        content, err := licenseTemplates.ReadFile(filename)
+        if err != nil </span><span class="cov8" title="1">{
+                return "", fmt.Errorf("license template not found: %s", licenseType)
+        }</span>
+        <span class="cov8" title="1">return string(content), nil</span>
+}
+
+// ListTemplates returns available license types
+func ListTemplates() []string <span class="cov8" title="1">{
+        entries, err := licenseTemplates.ReadDir("templates")
+        if err != nil </span><span class="cov0" title="0">{
+                return []string{}
+        }</span>
+
+        <span class="cov8" title="1">var templates []string
+        for _, entry := range entries </span><span class="cov8" title="1">{
+                if entry.IsDir() </span><span class="cov0" title="0">{
+                        continue</span>
+                }
+                <span class="cov8" title="1">name := entry.Name()
+                if strings.HasSuffix(name, ".txt") </span><span class="cov8" title="1">{
+                        // Remove .txt extension
+                        templates = append(templates, strings.TrimSuffix(name, filepath.Ext(name)))
+                }</span>
+        }
+
+        <span class="cov8" title="1">sort.Strings(templates)
+        return templates</span>
+}
+</pre>
+		
+		<pre class="file" id="file33" style="display: none">package processor
+
+import (
+        "context"
+        "fmt"
+        "os"
+        "path/filepath"
+
+        "github.com/leansecurity-co/copyright/internal/config"
+        "github.com/leansecurity-co/copyright/internal/copyright"
+        "github.com/leansecurity-co/copyright/internal/files"
+        "github.com/leansecurity-co/copyright/internal/language"
+        "github.com/leansecurity-co/copyright/internal/license"
+)
+
+// Processor orchestrates the copyright management workflow
+type Processor struct {
+        config    *config.Config
+        scanner   *files.Scanner
+        checker   *copyright.Checker
+        generator *copyright.HeaderGenerator
+        writer    *Writer
+        registry  *language.Registry
+        license   *license.Manager
+}
+
+// ProcessorOptions configures processor behavior
+type ProcessorOptions struct {
+        DryRun bool // If true, don't modify files
+        Backup bool // If true, create .bak files before modifying
+}
+
+// NewProcessor creates a new processor with the given configuration
+func NewProcessor(cfg *config.Config) (*Processor, error) <span class="cov8" title="1">{
+        if cfg == nil </span><span class="cov8" title="1">{
+                return nil, fmt.Errorf("config cannot be nil")
+        }</span>
+
+        // Create checker options from config
+        <span class="cov8" title="1">checkerOpts := &amp;copyright.CheckerOptions{
+                LinesToScan: cfg.Detection.LinesToScan,
+                Keywords:    cfg.Detection.Keywords,
+                RequireAll:  cfg.Detection.RequireAll,
+        }
+
+        // Create license manager with config values
+        licenseData := &amp;license.LicenseData{
+                Year:    cfg.Copyright.Year,
+                Company: cfg.Copyright.Company,
+                Author:  cfg.Copyright.Author,
+        }
+
+        return &amp;Processor{
+                config:    cfg,
+                checker:   copyright.NewChecker(checkerOpts),
+                generator: copyright.NewHeaderGenerator(cfg),
+                registry:  language.GetRegistry(),
+                license:   license.NewManager(cfg.License.Type, cfg.License.CustomText, licenseData),
+        }, nil</span>
+}
+
+// Process runs the copyright check/fix workflow on the given root path
+func (p *Processor) Process(ctx context.Context, rootPath string, mode Mode) (*ProcessResult, error) <span class="cov8" title="1">{
+        return p.ProcessWithOptions(ctx, rootPath, mode, &amp;ProcessorOptions{})
+}</span>
+
+// ProcessWithOptions runs the copyright check/fix workflow with custom options
+func (p *Processor) ProcessWithOptions(ctx context.Context, rootPath string, mode Mode, opts *ProcessorOptions) (*ProcessResult, error) <span class="cov8" title="1">{
+        // Initialize result
+        result := &amp;ProcessResult{
+                FileResults: make([]FileResult, 0),
+        }
+
+        // Get absolute path
+        absPath, err := filepath.Abs(rootPath)
+        if err != nil </span><span class="cov0" title="0">{
+                return nil, fmt.Errorf("failed to get absolute path: %w", err)
+        }</span>
+
+        // Verify path exists
+        <span class="cov8" title="1">if _, err := os.Stat(absPath); err != nil </span><span class="cov8" title="1">{
+                return nil, fmt.Errorf("path does not exist: %w", err)
+        }</span>
+
+        // Create scanner options from config
+        <span class="cov8" title="1">scanOpts := &amp;files.ScanOptions{
+                ExcludePatterns:    p.config.Scan.ExcludePatterns,
+                IncludePatterns:    p.config.Scan.IncludePatterns,
+                ExcludedExtensions: p.config.Scan.ExcludedExtensions,
+                SkipHidden:         p.config.Scan.SkipHidden,
+                FollowSymlinks:     p.config.Scan.FollowSymlinks,
+        }
+
+        // Create scanner
+        scanner, err := files.NewScanner(absPath, scanOpts)
+        if err != nil </span><span class="cov0" title="0">{
+                return nil, fmt.Errorf("failed to create scanner: %w", err)
+        }</span>
+        <span class="cov8" title="1">p.scanner = scanner
+
+        // Create writer with options
+        p.writer = NewWriter(opts.DryRun, opts.Backup)
+
+        // Scan for files
+        scanResult, err := scanner.Scan(ctx)
+        if err != nil </span><span class="cov0" title="0">{
+                return nil, fmt.Errorf("failed to scan files: %w", err)
+        }</span>
+
+        // Process each file
+        <span class="cov8" title="1">for _, file := range scanResult.Files </span><span class="cov8" title="1">{
+                // Check for context cancellation
+                select </span>{
+                case &lt;-ctx.Done():<span class="cov0" title="0">
+                        return result, ctx.Err()</span>
+                default:<span class="cov8" title="1"></span>
+                }
+
+                <span class="cov8" title="1">fileResult := p.processFile(ctx, file, mode)
+                result.FileResults = append(result.FileResults, *fileResult)
+
+                // Update counters
+                result.TotalFiles++
+                switch fileResult.Status </span>{
+                case StatusHasCopyright:<span class="cov8" title="1">
+                        result.FilesWithCopyright++</span>
+                case StatusMissingCopyright:<span class="cov8" title="1">
+                        result.FilesMissingCopyright++</span>
+                case StatusFixed:<span class="cov8" title="1">
+                        result.FilesFixed++</span>
+                case StatusSkipped:<span class="cov8" title="1">
+                        result.FilesSkipped++</span>
+                case StatusFailed:<span class="cov0" title="0">
+                        result.FilesFailed++</span>
+                }
+        }
+
+        // Handle LICENSE file
+        <span class="cov8" title="1">if mode == ModeFix </span><span class="cov8" title="1">{
+                licensePath, licenseExists := p.license.FindLicense(absPath)
+                if licenseExists </span><span class="cov0" title="0">{
+                        result.LicenseStatus = fmt.Sprintf("LICENSE exists at %s", licensePath)
+                }</span> else<span class="cov8" title="1"> {
+                        // Try to create if configured
+                        if p.config.License.AutoCreate </span><span class="cov0" title="0">{
+                                if err := p.license.Create(absPath); err != nil </span><span class="cov0" title="0">{
+                                        result.LicenseStatus = fmt.Sprintf("Failed to create LICENSE: %v", err)
+                                }</span> else<span class="cov0" title="0"> {
+                                        result.LicenseCreated = true
+                                        result.LicenseStatus = "LICENSE created"
+                                }</span>
+                        } else<span class="cov8" title="1"> {
+                                result.LicenseStatus = "No LICENSE file found (auto-create disabled)"
+                        }</span>
+                }
+        }
+
+        <span class="cov8" title="1">return result, nil</span>
+}
+
+// processFile handles processing of a single file
+func (p *Processor) processFile(ctx context.Context, file files.FileInfo, mode Mode) *FileResult <span class="cov8" title="1">{
+        result := &amp;FileResult{
+                FilePath:     file.Path,
+                RelativePath: file.RelativePath,
+        }
+
+        // Skip binary files
+        if file.IsBinary </span><span class="cov8" title="1">{
+                result.Status = StatusSkipped
+                result.Message = "binary file"
+                return result
+        }</span>
+
+        // Get language handler
+        <span class="cov8" title="1">lang := p.registry.GetLanguage(file.Filename)
+        if lang == nil </span><span class="cov8" title="1">{
+                result.Status = StatusSkipped
+                result.Message = "unsupported file type"
+                return result
+        }</span>
+
+        // Skip files that don't support comments
+        <span class="cov8" title="1">if !lang.CanHaveComments() </span><span class="cov8" title="1">{
+                result.Status = StatusSkipped
+                result.Message = "file type does not support comments"
+                return result
+        }</span>
+
+        // Check if file has copyright
+        <span class="cov8" title="1">checkResult, err := p.checker.Check(ctx, file.Path)
+        if err != nil </span><span class="cov0" title="0">{
+                result.Status = StatusFailed
+                result.Error = err
+                result.Message = fmt.Sprintf("failed to check file: %v", err)
+                return result
+        }</span>
+
+        <span class="cov8" title="1">if checkResult.Error != nil </span><span class="cov0" title="0">{
+                result.Status = StatusFailed
+                result.Error = checkResult.Error
+                result.Message = fmt.Sprintf("check error: %v", checkResult.Error)
+                return result
+        }</span>
+
+        // If file has copyright, we're done
+        <span class="cov8" title="1">if checkResult.HasCopyright </span><span class="cov8" title="1">{
+                result.Status = StatusHasCopyright
+                result.Message = fmt.Sprintf("copyright found at line %d", checkResult.LineFound)
+                return result
+        }</span>
+
+        // File is missing copyright
+        <span class="cov8" title="1">if mode == ModeCheck </span><span class="cov8" title="1">{
+                result.Status = StatusMissingCopyright
+                result.Message = "copyright header missing"
+                return result
+        }</span>
+
+        // Mode is ModeFix - add the copyright header
+        <span class="cov8" title="1">if err := p.addCopyrightHeader(file.Path, lang); err != nil </span><span class="cov0" title="0">{
+                result.Status = StatusFailed
+                result.Error = err
+                result.Message = fmt.Sprintf("failed to add copyright: %v", err)
+                return result
+        }</span>
+
+        <span class="cov8" title="1">result.Status = StatusFixed
+        result.Message = "copyright header added"
+        return result</span>
+}
+
+// addCopyrightHeader adds a copyright header to a file
+func (p *Processor) addCopyrightHeader(filePath string, lang language.Language) error <span class="cov8" title="1">{
+        // Generate the copyright text
+        copyrightText, err := p.generator.Generate()
+        if err != nil </span><span class="cov0" title="0">{
+                return fmt.Errorf("failed to generate copyright: %w", err)
+        }</span>
+
+        // Format the header for the specific language
+        <span class="cov8" title="1">header := lang.FormatHeader(copyrightText)
+
+        // Write the header to the file
+        if err := p.writer.WriteHeader(filePath, header, lang); err != nil </span><span class="cov0" title="0">{
+                return fmt.Errorf("failed to write header: %w", err)
+        }</span>
+
+        <span class="cov8" title="1">return nil</span>
+}
+</pre>
+		
+		<pre class="file" id="file34" style="display: none">package processor
+
+import "fmt"
+
+// Mode represents the operation mode
+type Mode int
+
+const (
+        // ModeCheck checks if files have copyright headers
+        ModeCheck Mode = iota
+        // ModeFix adds missing copyright headers to files
+        ModeFix
+)
+
+// FileStatus represents the processing status of a file
+type FileStatus int
+
+const (
+        // StatusHasCopyright indicates the file already has a copyright header
+        StatusHasCopyright FileStatus = iota
+        // StatusMissingCopyright indicates the file is missing a copyright header
+        StatusMissingCopyright
+        // StatusFixed indicates the copyright header was added to the file
+        StatusFixed
+        // StatusSkipped indicates the file was skipped (e.g., unsupported language)
+        StatusSkipped
+        // StatusFailed indicates processing failed for the file
+        StatusFailed
+)
+
+// String returns the string representation of FileStatus
+func (s FileStatus) String() string <span class="cov8" title="1">{
+        switch s </span>{
+        case StatusHasCopyright:<span class="cov8" title="1">
+                return "has_copyright"</span>
+        case StatusMissingCopyright:<span class="cov8" title="1">
+                return "missing_copyright"</span>
+        case StatusFixed:<span class="cov8" title="1">
+                return "fixed"</span>
+        case StatusSkipped:<span class="cov8" title="1">
+                return "skipped"</span>
+        case StatusFailed:<span class="cov8" title="1">
+                return "failed"</span>
+        default:<span class="cov0" title="0">
+                return "unknown"</span>
+        }
+}
+
+// FileResult represents the result of processing a single file
+type FileResult struct {
+        FilePath     string
+        RelativePath string
+        Status       FileStatus
+        Message      string
+        Error        error
+}
+
+// ProcessResult represents the overall processing result
+type ProcessResult struct {
+        TotalFiles            int
+        FilesWithCopyright    int
+        FilesMissingCopyright int
+        FilesFixed            int
+        FilesSkipped          int
+        FilesFailed           int
+        FileResults           []FileResult
+        LicenseCreated        bool
+        LicenseStatus         string
+}
+
+// ExitCode returns the appropriate exit code based on the process result
+// Returns 0 if all files have copyright headers, 1 if any are missing or failed
+func (r *ProcessResult) ExitCode() int <span class="cov8" title="1">{
+        if r.FilesMissingCopyright &gt; 0 || r.FilesFailed &gt; 0 </span><span class="cov8" title="1">{
+                return 1
+        }</span>
+        <span class="cov8" title="1">return 0</span>
+}
+
+// Summary returns a human-readable summary of the process result
+func (r *ProcessResult) Summary() string <span class="cov8" title="1">{
+        return fmt.Sprintf(
+                "Total: %d, Has Copyright: %d, Missing: %d, Fixed: %d, Skipped: %d, Failed: %d",
+                r.TotalFiles,
+                r.FilesWithCopyright,
+                r.FilesMissingCopyright,
+                r.FilesFixed,
+                r.FilesSkipped,
+                r.FilesFailed,
+        )
+}</span>
+</pre>
+		
+		<pre class="file" id="file35" style="display: none">package processor
+
+import (
+        "fmt"
+        "os"
+        "strings"
+
+        "github.com/leansecurity-co/copyright/internal/language"
+)
+
+// Writer handles writing copyright headers to files
+type Writer struct {
+        dryRun bool
+        backup bool
+}
+
+// NewWriter creates a new writer with the specified options
+func NewWriter(dryRun, backup bool) *Writer <span class="cov8" title="1">{
+        return &amp;Writer{
+                dryRun: dryRun,
+                backup: backup,
+        }
+}</span>
+
+// WriteHeader inserts a copyright header into a file
+// It uses the language's PreserveLines and InsertPosition to correctly
+// place the header after shebangs/encoding declarations
+func (w *Writer) WriteHeader(filePath string, header string, lang language.Language) error <span class="cov8" title="1">{
+        // Read the current file content
+        content, err := os.ReadFile(filePath)
+        if err != nil </span><span class="cov0" title="0">{
+                return fmt.Errorf("failed to read file: %w", err)
+        }</span>
+
+        // Get lines that should be preserved (shebang, encoding, etc.)
+        <span class="cov8" title="1">preservedLines := lang.PreserveLines(content)
+
+        // Build the new content
+        var newContent strings.Builder
+
+        // Write preserved lines
+        for _, line := range preservedLines </span><span class="cov8" title="1">{
+                newContent.WriteString(line)
+        }</span>
+
+        // Add a blank line after preserved content if there are preserved lines
+        <span class="cov8" title="1">if len(preservedLines) &gt; 0 </span><span class="cov8" title="1">{
+                // Check if the last preserved line already ends with newline
+                lastLine := preservedLines[len(preservedLines)-1]
+                if !strings.HasSuffix(lastLine, "\n") </span><span class="cov0" title="0">{
+                        newContent.WriteString("\n")
+                }</span>
+                <span class="cov8" title="1">newContent.WriteString("\n")</span>
+        }
+
+        // Write the copyright header
+        <span class="cov8" title="1">newContent.WriteString(header)
+
+        // Add a blank line after the header
+        if !strings.HasSuffix(header, "\n\n") </span><span class="cov8" title="1">{
+                if strings.HasSuffix(header, "\n") </span><span class="cov8" title="1">{
+                        newContent.WriteString("\n")
+                }</span> else<span class="cov0" title="0"> {
+                        newContent.WriteString("\n\n")
+                }</span>
+        }
+
+        // Get the insert position (byte offset after preserved lines)
+        <span class="cov8" title="1">insertPos := lang.InsertPosition(content)
+
+        // Write the remaining content after the insert position
+        if insertPos &lt; len(content) </span><span class="cov8" title="1">{
+                remainingContent := content[insertPos:]
+                // Skip leading blank lines in remaining content to avoid too much whitespace
+                remainingStr := strings.TrimLeft(string(remainingContent), "\n")
+                newContent.WriteString(remainingStr)
+        }</span>
+
+        // Ensure file ends with a newline
+        <span class="cov8" title="1">finalContent := newContent.String()
+        if !strings.HasSuffix(finalContent, "\n") </span><span class="cov8" title="1">{
+                finalContent += "\n"
+        }</span>
+
+        // Write the new content to the file
+        <span class="cov8" title="1">return w.WriteFile(filePath, []byte(finalContent))</span>
+}
+
+// WriteFile writes content to a file (with backup if enabled)
+func (w *Writer) WriteFile(filePath string, content []byte) error <span class="cov8" title="1">{
+        // If dry-run mode, don't actually write
+        if w.dryRun </span><span class="cov8" title="1">{
+                return nil
+        }</span>
+
+        // Create backup if enabled
+        <span class="cov8" title="1">if w.backup </span><span class="cov8" title="1">{
+                backupPath := filePath + ".bak"
+                originalContent, err := os.ReadFile(filePath)
+                if err != nil </span><span class="cov0" title="0">{
+                        return fmt.Errorf("failed to read original file for backup: %w", err)
+                }</span>
+                <span class="cov8" title="1">if err := os.WriteFile(backupPath, originalContent, 0644); err != nil </span><span class="cov0" title="0">{
+                        return fmt.Errorf("failed to create backup file: %w", err)
+                }</span>
+        }
+
+        // Write the new content
+        <span class="cov8" title="1">if err := os.WriteFile(filePath, content, 0644); err != nil </span><span class="cov0" title="0">{
+                return fmt.Errorf("failed to write file: %w", err)
+        }</span>
+
+        <span class="cov8" title="1">return nil</span>
+}
+</pre>
+		
+		<pre class="file" id="file36" style="display: none">package main
+
+import (
+        "context"
+        "fmt"
+        "os"
+
+        "github.com/leansecurity-co/copyright/internal/config"
+        "github.com/leansecurity-co/copyright/internal/processor"
+        "github.com/spf13/cobra"
+)
+
+var (
+        cfgFile string
+        verbose bool
+        quiet   bool
+        dryRun  bool
+        backup  bool
+)
+
+func main() <span class="cov0" title="0">{
+        if err := rootCmd.Execute(); err != nil </span><span class="cov0" title="0">{
+                os.Exit(1)
+        }</span>
+}
+
+var rootCmd = &amp;cobra.Command{
+        Use:   "copyright",
+        Short: "A tool for managing copyright headers in source files",
+        Long: `Copyright is a CLI tool that checks and adds copyright headers
+to source code files. It supports multiple programming languages
+and can be configured via a .copyright.yaml file.`,
+}
+
+var checkCmd = &amp;cobra.Command{
+        Use:   "check [path]",
+        Short: "Check files for copyright headers",
+        Long:  `Check all files in the specified path (default: current directory) for copyright headers.`,
+        Args:  cobra.MaximumNArgs(1),
+        RunE:  runCheck,
+}
+
+var fixCmd = &amp;cobra.Command{
+        Use:   "fix [path]",
+        Short: "Add missing copyright headers to files",
+        Long:  `Add copyright headers to files that are missing them in the specified path (default: current directory).`,
+        Args:  cobra.MaximumNArgs(1),
+        RunE:  runFix,
+}
+
+var initCmd = &amp;cobra.Command{
+        Use:   "init",
+        Short: "Initialize a .copyright.yaml configuration file",
+        Long:  `Create a new .copyright.yaml configuration file with default values in the current directory.`,
+        RunE:  runInit,
+}
+
+var versionCmd = &amp;cobra.Command{
+        Use:   "version",
+        Short: "Print the version number",
+        Run: func(cmd *cobra.Command, args []string) <span class="cov0" title="0">{
+                fmt.Println("copyright v0.1.0")
+        }</span>,
+}
+
+func init() <span class="cov0" title="0">{
+        rootCmd.PersistentFlags().StringVarP(&amp;cfgFile, "config", "c", "", "config file (default is .copyright.yaml)")
+        rootCmd.PersistentFlags().BoolVarP(&amp;verbose, "verbose", "v", false, "enable verbose output")
+        rootCmd.PersistentFlags().BoolVarP(&amp;quiet, "quiet", "q", false, "suppress non-error output")
+
+        fixCmd.Flags().BoolVar(&amp;dryRun, "dry-run", false, "show what would be changed without modifying files")
+        fixCmd.Flags().BoolVar(&amp;backup, "backup", false, "create .bak files before modifying")
+
+        rootCmd.AddCommand(checkCmd)
+        rootCmd.AddCommand(fixCmd)
+        rootCmd.AddCommand(initCmd)
+        rootCmd.AddCommand(versionCmd)
+}</span>
+
+func loadConfig() (*config.Config, error) <span class="cov0" title="0">{
+        cfg, err := config.Load(cfgFile)
+        if err != nil </span><span class="cov0" title="0">{
+                // Use defaults if config not found
+                cfg = config.NewDefault()
+        }</span>
+
+        // Apply CLI flags
+        <span class="cov0" title="0">cfg.Output.Verbose = verbose
+        cfg.Output.Quiet = quiet
+
+        return cfg, nil</span>
+}
+
+func runCheck(cmd *cobra.Command, args []string) error <span class="cov0" title="0">{
+        path := "."
+        if len(args) &gt; 0 </span><span class="cov0" title="0">{
+                path = args[0]
+        }</span>
+
+        <span class="cov0" title="0">cfg, err := loadConfig()
+        if err != nil </span><span class="cov0" title="0">{
+                return fmt.Errorf("failed to load config: %w", err)
+        }</span>
+
+        <span class="cov0" title="0">proc, err := processor.NewProcessor(cfg)
+        if err != nil </span><span class="cov0" title="0">{
+                return fmt.Errorf("failed to create processor: %w", err)
+        }</span>
+
+        <span class="cov0" title="0">ctx := context.Background()
+        result, err := proc.Process(ctx, path, processor.ModeCheck)
+        if err != nil </span><span class="cov0" title="0">{
+                return fmt.Errorf("processing failed: %w", err)
+        }</span>
+
+        <span class="cov0" title="0">printResult(result, cfg)
+        os.Exit(result.ExitCode())
+        return nil</span>
+}
+
+func runFix(cmd *cobra.Command, args []string) error <span class="cov0" title="0">{
+        path := "."
+        if len(args) &gt; 0 </span><span class="cov0" title="0">{
+                path = args[0]
+        }</span>
+
+        <span class="cov0" title="0">cfg, err := loadConfig()
+        if err != nil </span><span class="cov0" title="0">{
+                return fmt.Errorf("failed to load config: %w", err)
+        }</span>
+
+        <span class="cov0" title="0">proc, err := processor.NewProcessor(cfg)
+        if err != nil </span><span class="cov0" title="0">{
+                return fmt.Errorf("failed to create processor: %w", err)
+        }</span>
+
+        <span class="cov0" title="0">ctx := context.Background()
+        opts := &amp;processor.ProcessorOptions{
+                DryRun: dryRun,
+                Backup: backup,
+        }
+        result, err := proc.ProcessWithOptions(ctx, path, processor.ModeFix, opts)
+        if err != nil </span><span class="cov0" title="0">{
+                return fmt.Errorf("processing failed: %w", err)
+        }</span>
+
+        <span class="cov0" title="0">printResult(result, cfg)
+        return nil</span>
+}
+
+func runInit(cmd *cobra.Command, args []string) error <span class="cov0" title="0">{
+        configPath := ".copyright.yaml"
+
+        // Check if config already exists
+        if _, err := os.Stat(configPath); err == nil </span><span class="cov0" title="0">{
+                return fmt.Errorf("config file %s already exists", configPath)
+        }</span>
+
+        <span class="cov0" title="0">cfg := config.NewDefault()
+        if err := cfg.Save(configPath); err != nil </span><span class="cov0" title="0">{
+                return fmt.Errorf("failed to create config file: %w", err)
+        }</span>
+
+        <span class="cov0" title="0">fmt.Printf("Created %s\n", configPath)
+        return nil</span>
+}
+
+func printResult(result *processor.ProcessResult, cfg *config.Config) <span class="cov0" title="0">{
+        if cfg.Output.Quiet </span><span class="cov0" title="0">{
+                return
+        }</span>
+
+        <span class="cov0" title="0">if cfg.Output.Verbose </span><span class="cov0" title="0">{
+                for _, fr := range result.FileResults </span><span class="cov0" title="0">{
+                        symbol := getStatusSymbol(fr.Status)
+                        fmt.Printf("%s %s: %s\n", symbol, fr.RelativePath, fr.Message)
+                }</span>
+                <span class="cov0" title="0">fmt.Println()</span>
+        }
+
+        <span class="cov0" title="0">fmt.Println(result.Summary())
+
+        if result.LicenseStatus != "" </span><span class="cov0" title="0">{
+                fmt.Printf("License: %s\n", result.LicenseStatus)
+        }</span>
+}
+
+func getStatusSymbol(status processor.FileStatus) string <span class="cov0" title="0">{
+        switch status </span>{
+        case processor.StatusHasCopyright:<span class="cov0" title="0">
+                return "[OK]"</span>
+        case processor.StatusMissingCopyright:<span class="cov0" title="0">
+                return "[MISSING]"</span>
+        case processor.StatusFixed:<span class="cov0" title="0">
+                return "[FIXED]"</span>
+        case processor.StatusSkipped:<span class="cov0" title="0">
+                return "[SKIP]"</span>
+        case processor.StatusFailed:<span class="cov0" title="0">
+                return "[FAIL]"</span>
+        default:<span class="cov0" title="0">
+                return "[?]"</span>
+        }
+}
+</pre>
+		
+		</div>
+	</body>
+	<script>
+	(function() {
+		var files = document.getElementById('files');
+		var visible;
+		files.addEventListener('change', onChange, false);
+		function select(part) {
+			if (visible)
+				visible.style.display = 'none';
+			visible = document.getElementById(part);
+			if (!visible)
+				return;
+			files.value = part;
+			visible.style.display = 'block';
+			location.hash = part;
+		}
+		function onChange() {
+			select(files.value);
+			window.scrollTo(0, 0);
+		}
+		if (location.hash != "") {
+			select(location.hash.substr(1));
+		}
+		if (!visible) {
+			select("file0");
+		}
+	})();
+	</script>
+</html>
