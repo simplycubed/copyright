@@ -55,8 +55,8 @@ import (
     "fmt"
     "log"
 
-    "github.com/leansecurity-co/copyright/internal/config"
-    "github.com/leansecurity-co/copyright/internal/processor"
+    "github.com/charlesgreen/copyright/internal/config"
+    "github.com/charlesgreen/copyright/internal/processor"
 )
 
 func main() {

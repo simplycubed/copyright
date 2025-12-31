@@ -5,7 +5,7 @@ import (
 	"os"
 	"strings"
 
-	"github.com/leansecurity-co/copyright/internal/language"
+	"github.com/charlesgreen/copyright/internal/language"
 )
 
 // Writer handles writing copyright headers to files

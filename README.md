@@ -18,7 +18,7 @@ A Golang CLI tool for automated copyright header management across multi-languag
 Requires Go 1.20 or later.
 
 ```bash
-go install github.com/leansecurity-co/copyright@latest
+go install github.com/charlesgreen/copyright@latest
 ```
 
 To uninstall:
@@ -30,7 +30,7 @@ rm $(go env GOPATH)/bin/copyright
 Or build from source:
 
 ```bash
-git clone https://github.com/leansecurity-co/copyright.git
+git clone https://github.com/charlesgreen/copyright.git
 cd copyright
 make build
 ```

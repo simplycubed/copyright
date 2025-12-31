@@ -1,4 +1,4 @@
-module github.com/leansecurity-co/copyright
+module github.com/charlesgreen/copyright
 
 go 1.25.5
 

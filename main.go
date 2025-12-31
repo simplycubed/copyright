@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/leansecurity-co/copyright/internal/config"
-	"github.com/leansecurity-co/copyright/internal/processor"
+	"github.com/charlesgreen/copyright/internal/config"
+	"github.com/charlesgreen/copyright/internal/processor"
 	"github.com/spf13/cobra"
 )
 

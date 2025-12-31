@@ -7,8 +7,8 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/leansecurity-co/copyright/internal/config"
-	"github.com/leansecurity-co/copyright/internal/processor"
+	"github.com/charlesgreen/copyright/internal/config"
+	"github.com/charlesgreen/copyright/internal/processor"
 )
 
 // ExampleProcessor_check demonstrates checking files for copyright headers

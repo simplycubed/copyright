@@ -7,7 +7,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/leansecurity-co/copyright/internal/config"
+	"github.com/charlesgreen/copyright/internal/config"
 )
 
 // TestIntegration_FullWorkflow tests the complete workflow from check to fix

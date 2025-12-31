@@ -3,7 +3,7 @@ package language_test
 import (
 	"fmt"
 
-	"github.com/leansecurity-co/copyright/internal/language"
+	"github.com/charlesgreen/copyright/internal/language"
 )
 
 // Example demonstrates how to use the language registry

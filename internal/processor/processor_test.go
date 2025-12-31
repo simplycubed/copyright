@@ -8,7 +8,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/leansecurity-co/copyright/internal/config"
+	"github.com/charlesgreen/copyright/internal/config"
 )
 
 // setupTestDir creates a temporary test directory with test files

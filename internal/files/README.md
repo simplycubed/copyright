@@ -33,7 +33,7 @@ import (
     "fmt"
     "log"
 
-    "github.com/leansecurity-co/copyright/internal/files"
+    "github.com/charlesgreen/copyright/internal/files"
 )
 
 func main() {

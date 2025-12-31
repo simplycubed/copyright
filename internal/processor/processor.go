@@ -6,11 +6,11 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/leansecurity-co/copyright/internal/config"
-	"github.com/leansecurity-co/copyright/internal/copyright"
-	"github.com/leansecurity-co/copyright/internal/files"
-	"github.com/leansecurity-co/copyright/internal/language"
-	"github.com/leansecurity-co/copyright/internal/license"
+	"github.com/charlesgreen/copyright/internal/config"
+	"github.com/charlesgreen/copyright/internal/copyright"
+	"github.com/charlesgreen/copyright/internal/files"
+	"github.com/charlesgreen/copyright/internal/language"
+	"github.com/charlesgreen/copyright/internal/license"
 )
 
 // Processor orchestrates the copyright management workflow

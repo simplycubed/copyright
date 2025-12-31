@@ -6,7 +6,7 @@ import (
 	"log"
 	"time"
 
-	"github.com/leansecurity-co/copyright/internal/files"
+	"github.com/charlesgreen/copyright/internal/files"
 )
 
 // ExampleScanner_basic demonstrates basic usage of the file scanner
