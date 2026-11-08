@@ -3,6 +3,7 @@
 BINARY_NAME := copyright
 GO := go
 LINTER := golangci-lint
+LINTER_VERSION := v2.15.0
 COVERAGE_THRESHOLD := 70
 
 all: check build
@@ -54,7 +55,7 @@ vet:
 	$(GO) vet ./...
 
 lint:
-	@which $(LINTER) > /dev/null || (echo "Installing $(LINTER)..." && go install github.com/golangci/golangci-lint/v2/cmd/golangci-lint@latest)
+	@which $(LINTER) > /dev/null || (echo "Installing $(LINTER)..." && go install github.com/golangci/golangci-lint/v2/cmd/golangci-lint@$(LINTER_VERSION))
 	$(LINTER) run ./...
 
 check: fmt vet lint test
