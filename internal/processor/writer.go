@@ -100,7 +100,8 @@ func (w *Writer) WriteFile(filePath string, content []byte) error {
 		if err != nil {
 			return fmt.Errorf("failed to read original file for backup: %w", err)
 		}
-		if err := os.WriteFile(backupPath, originalContent, 0644); err != nil {
+		// backupPath is the operator-selected source file plus ".bak", not an untrusted path.
+		if err := os.WriteFile(backupPath, originalContent, 0644); err != nil { //nolint:gosec // G703: sibling backup of the file passed to fix
 			return fmt.Errorf("failed to create backup file: %w", err)
 		}
 	}

@@ -47,8 +47,10 @@ Everything that looks like restraint follows from this:
 
 ## Gate
 
-`make ci` = fmt-check → vet → lint → test. CI runs that, then `make build`. Locally, `make check`
-is the same sequence with `make fmt` instead of `fmt-check`.
+`make ci` = fmt-check → vet → lint → test. GitHub CI runs format, vet, race tests, lint, and
+build on `main` and pull requests. Go comes from `go.mod`. A `v*` tag runs
+`.github/workflows/release.yml`, which publishes with GoReleaser v2 (`.goreleaser.yaml`).
+Locally, `make check` is `make ci` with `make fmt` instead of `fmt-check`.
 
 **Gate-first, every feature:** no feature work begins until its gate exists; extend the gate first,
 then build the feature against it. A gate nobody has watched fire is a false clear, so every new

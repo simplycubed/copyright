@@ -10,6 +10,13 @@ import (
 	"github.com/spf13/cobra"
 )
 
+// Set by GoReleaser ldflags.
+var (
+	Version = "dev"
+	Commit  = "none"
+	Date    = "unknown"
+)
+
 var (
 	cfgFile string
 	verbose bool
@@ -59,8 +66,12 @@ var versionCmd = &cobra.Command{
 	Use:   "version",
 	Short: "Print the version number",
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("copyright v0.1.0")
+		fmt.Println(versionLine())
 	},
+}
+
+func versionLine() string {
+	return fmt.Sprintf("copyright %s (commit %s, date %s)", Version, Commit, Date)
 }
 
 func init() {

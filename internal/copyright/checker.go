@@ -48,7 +48,7 @@ func (c *Checker) Check(ctx context.Context, path string) (*CheckResult, error) 
 	if err != nil {
 		return nil, fmt.Errorf("failed to open file: %w", err)
 	}
-	defer file.Close()
+	defer func() { _ = file.Close() }()
 
 	result := &CheckResult{}
 	if c.opts.LinesToScan <= 0 || len(c.opts.Keywords) == 0 {
