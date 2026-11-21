@@ -1,17 +1,29 @@
 version: 2
 updates:
-  - package-ecosystem: "gomod"
-    directory: "/"
+  # Version updates. Security updates are already on for this repo and open their
+  # own pull requests; this file is what schedules the routine bumps.
+  #
+  # Minor and patch updates for the module are grouped. Major updates stay as
+  # their own pull requests.
+  - package-ecosystem: gomod
+    directory: /
     schedule:
-      interval: "daily"
+      interval: weekly
     open-pull-requests-limit: 5
-    commit-message:
-      prefix: "deps"
+    groups:
+      minor-and-patch:
+        patterns:
+          - "*"
+        update-types:
+          - minor
+          - patch
 
-  - package-ecosystem: "github-actions"
-    directory: "/"
+  - package-ecosystem: github-actions
+    directory: /
     schedule:
-      interval: "daily"
+      interval: weekly
     open-pull-requests-limit: 5
-    commit-message:
-      prefix: "ci"
+    groups:
+      actions:
+        patterns:
+          - "*"
