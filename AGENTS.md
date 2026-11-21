@@ -48,9 +48,12 @@ Everything that looks like restraint follows from this:
 ## Gate
 
 `make ci` = fmt-check → vet → lint → test. GitHub CI runs format, vet, race tests, lint, and
-build on `main` and pull requests. Go comes from `go.mod`. A `v*` tag runs
-`.github/workflows/release.yml`, which publishes with GoReleaser v2 (`.goreleaser.yaml`).
-Locally, `make check` is `make ci` with `make fmt` instead of `fmt-check`.
+build on `main` and pull requests. CodeQL runs from `.github/workflows/codeql.yml` on those
+same branches and on a weekly schedule. That workflow is the code-scanning setup: leave CodeQL
+default setup disabled, because GitHub does not run default setup and this workflow together.
+Go comes from `go.mod`. A `v*` tag runs `.github/workflows/release.yml`, which publishes with
+GoReleaser v2 (`.goreleaser.yaml`). Locally, `make check` is `make ci` with `make fmt` instead
+of `fmt-check`.
 
 **Gate-first, every feature:** no feature work begins until its gate exists; extend the gate first,
 then build the feature against it. A gate nobody has watched fire is a false clear, so every new
